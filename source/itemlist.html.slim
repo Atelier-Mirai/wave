@@ -1,0 +1,15 @@
+---
+  layout: "custom"
+  title: "私のタイトル"
+  my_list:
+    - one
+    - two
+    - three
+---
+
+h1
+  | リスト
+ol
+  - current_page.data.my_list.each do |f|
+    li
+      = f
