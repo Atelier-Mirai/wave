@@ -26,6 +26,7 @@ body {
   grid-template-columns: 20px 1fr 20px;
   grid-template-rows:
     [head] 100px
+    [notice] auto
     [title] 210px
     [sub] auto
     [recent] auto
