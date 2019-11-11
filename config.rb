@@ -48,10 +48,13 @@ page '/*.txt',  layout: false
 configure :build do
   # HTML 圧縮
   activate :minify_html
+
   # CSS 圧縮
   activate :minify_css
+
   # JavaScript 圧縮
   activate :minify_javascript
+
   # イメージの圧縮
   activate :imageoptim do |options|
     # Use a build manifest to prevent re-compressing images between builds

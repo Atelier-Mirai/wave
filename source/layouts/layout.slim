@@ -1,10 +1,11 @@
 doctype html
-html
+html lang='ja'
   head
     meta charset="utf-8"
     meta name="viewport" content="width=device-width, initial-scale=1"
     title
       = current_page.data.title || "WAVE"
+    link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet"
     = stylesheet_link_tag "site"
     = javascript_include_tag "site"
     = favicon_tag 'images/favicon.png'
