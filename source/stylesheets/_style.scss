@@ -26,7 +26,7 @@ body {
   grid-template-columns: 20px 1fr 20px;
   grid-template-rows:
     [head] 100px
-    [title] auto
+    [title] 210px
     [sub] auto
     [recent] auto
     [foot] 100px;
@@ -67,19 +67,52 @@ nav {
 }
 
 /* ヒーローイメージ */
-figure {
+.hero {
   grid-column: 1 / -1;
   grid-row: title / span 2;
+  img {
+    height: 547px;
+    object-fit: cover;
+    vertical-align: bottom;
+    filter: brightness(70%);
+    z-index: -1; /* filter適用すると、重なり順が上に来るので、z-indexで重なり順を下にする */
+    position: relative; /* Safari で z-index 適用させるため */
+  }
 }
 
 /* タイトル */
-h1 {
+.title {
   grid-row: title;
+  justify-content: center;
+  align-self: center;
+  color: $sakurairo;
+  font-size: 48px;
+  font-weight: normal;
+  line-height: 1.2;
+  text-shadow: 0 0 5px $amairo;
+  text-align: center;
 }
 
 /* サブタイトル */
-p {
+.subtitle {
   grid-row: sub;
+  text-align: center;
+  a {
+    color: $sakurairo;
+    text-decoration: none;
+    border: solid 1px $sakurairo;
+    padding: 10px 40px;
+    display: inline-block;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: rgba($amairo, 0.5);
+    &:hover {
+      background-color: rgba(darken($amairo, 20%), 0.7);
+    }
+  }
+  img {
+    width: 200px;
+  }
 }
 
 /* 記事一覧 */
