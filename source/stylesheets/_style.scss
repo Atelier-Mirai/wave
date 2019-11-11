@@ -1,3 +1,14 @@
+/* mixin */
+@mixin link_style($color: $sumi, $font-size: 14px){
+  color: $color;
+  font-size: $font-size;
+  text-decoration: none;
+  font-weight: bold;
+  &:hover {
+    color: darken($color, 30%);
+  }
+}
+
 /* 基本設定 */
 * {
   margin: 0;
@@ -20,6 +31,8 @@ body {
     [recent] auto
     [foot] 100px;
   row-gap: 20px;
+  font-family: sans-serif; /* ゴシック系フォントで表示 */
+  color: $kurogakiiro;
 }
 
 /* パーツの配置 */
@@ -30,11 +43,27 @@ body > * {
 /* ヘッダー */
 header {
   grid-row: head;
+  justify-self: center;
+  align-self: center;
+  font-size: 40px;
+  color: $konjiki;
 }
 
 /* ナビゲーションメニュー */
 nav {
   grid-row: head;
+  justify-self: center;
+  align-self: end;
+  ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 20px;
+    li a {
+      @include link_style($font-size: 12px);
+    }
+  }
 }
 
 /* ヒーローイメージ */
@@ -56,6 +85,9 @@ p {
 /* 記事一覧 */
 section {
   grid-row: recent;
+  article h2 {
+    text-shadow: 2px 2px 2px $haiiro;
+  }
 }
 
 /* フッター */
