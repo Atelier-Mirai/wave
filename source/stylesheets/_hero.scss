@@ -1,0 +1,21 @@
+/* ヒーローイメージ */
+.hero {
+  grid-column: 1 / -1;
+  grid-row: title / span 2;
+  img {
+    height: 547px;
+    object-fit: cover;
+    vertical-align: bottom;
+    filter: brightness(70%);
+    z-index: -1; /* filter適用すると、重なり順が上に来るので、z-indexで重なり順を下にする */
+    position: relative; /* Safari で z-index 適用させるため */
+  }
+}
+
+/* デスクトップ版 */
+@media(min-width: 768px) {
+  .hero {
+    grid-row: title;
+    margin-top: -20px;
+  }
+}

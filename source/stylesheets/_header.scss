@@ -1,0 +1,19 @@
+/* ヘッダー */
+header {
+  grid-row: head;
+  justify-self: center;
+  align-self: center;
+  a {
+    text-decoration: none;
+    font-size: 40px;
+    color: $konjiki;
+    font-family: 'Dancing Script', cursive;
+  }
+}
+
+/* デスクトップ版 */
+@media(min-width: 768px) {
+  header {
+    justify-self: start;
+  }
+}

@@ -11,6 +11,8 @@ end
 
 # Layouts
 # https://middlemanapp.com/basics/layouts/
+page 'index.html', layout: 'top'
+page 'post*.html', layout: 'post'
 
 # Per-page layout changes
 page '/*.xml',  layout: false

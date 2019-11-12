@@ -1,0 +1,17 @@
+doctype html
+html lang='ja'
+  head
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width, initial-scale=1"
+    title
+      = current_page.data.title || "WAVE"
+    link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap"
+    = stylesheet_link_tag "top"
+    / = javascript_include_tag "top"
+    = favicon_tag 'images/favicon.png'
+
+  body.top
+    = partial 'header'
+    = partial 'nav'
+    = yield
+    = partial 'footer'

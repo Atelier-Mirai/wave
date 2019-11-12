@@ -1,0 +1,17 @@
+/* フッター */
+footer {
+  grid-row: foot;
+  justify-self: center;
+  align-self: center;
+  font-size: 15px;
+  font-family: 'Dancing Script', cursive;
+}
+
+/* フッターのバー */
+body::after {
+  content: "";
+  background-color: $sakurairo;
+  grid-column: 1 / -1;
+  grid-row: foot;
+  z-index: -1;
+}

@@ -5,11 +5,12 @@ html lang='ja'
     meta name="viewport" content="width=device-width, initial-scale=1"
     title
       = current_page.data.title || "WAVE"
-    link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet"
-    = stylesheet_link_tag "site"
-    = javascript_include_tag "site"
+    link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" 
+    link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"
+    = stylesheet_link_tag "post"
     = favicon_tag 'images/favicon.png'
-  body
+
+  body.post
     = partial 'header'
     = partial 'nav'
     = yield
