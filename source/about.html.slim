@@ -1,8 +1,22 @@
+---
+title: サイトについて
+---
 
-h1 About
-p Welcome
+article
+  h1 サイトについて
+  p きれいなインテリアやかわいい文房具など、日常の中で見つけたお気に入りのものをまとめているサイトです。
 
-= partial(:paypal_donate_button,
-  locals: { amount: 100, amount_text: "Pay $100" })
+  table
+    tr
+      th サイト名
+      td WAVE
+    tr
+      th 開 設 日
+      td 令和元年十一月十一日
+    tr
+      th 運営方針
+      td ときどき更新中。最新記事の一覧はトップページをご覧ください。
 
-= image_tag 'sakura.png'
+.submenu
+  = partial "profile"
+  = partial "pickup"

@@ -17,32 +17,5 @@ article
   p スマホのアプリも便利ですが、たまには紙とペンを使ってみるのもお勧めです
 
 .submenu
-  aside
-    h2 PROFILE
-    figure
-      = image_tag "profile.jpg", alt: "WAVEの管理人"
-    p 部屋の掃除は好きだけれど、お皿洗いは苦手。毎日そこら辺をお散歩しています。
-
-  aside
-    h2 PICKUP
-    ul
-      li
-        a href="post02.html"
-          figure
-            = image_tag 'plant.jpg'
-          h3 緑のアクセントならこれ
-      li
-        a href='post03.html'
-          figure
-            = image_tag 'items.jpg'
-          h3 小物と飾り棚の組み合わせ
-      li
-        a href='post04.html'
-          figure
-            = image_tag 'chair.jpg'
-          h3 居心地のいい部屋にあるもの
-      li
-        a href='post05.html'
-          figure
-            = image_tag 'tile.jpg'
-          h3 カラフルなタイル
+  = partial 'profile'
+  = partial 'pickup'
