@@ -1,19 +1,14 @@
-// common
-@import "wa_no_iro";
-@import "mixin";
-@import "reset";
-@import "body";
-@import "header";
-@import "nav";
-@import "footer";
+// Web Fonts
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+1p&display=swap&subset=japanese');
 
-// top page
-@import "hero";
-@import "title";
-@import "section";
+// utility
+@import "utility/utility";
 
-// site page
-@import "post_article";
-@import "post_submenu";
-@import "table";
-@import "form";
+// foundation
+@import "foundation/foundation";
+
+// layout
+@import "layout/layout";
+
+// object
+@import "object/object";
