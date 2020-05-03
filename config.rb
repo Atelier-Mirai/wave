@@ -12,6 +12,7 @@ end
 # レイアウト
 set :layout, 'site'
 page 'index.html', layout: 'top'
+page 'post*.html', layout: 'post'
 page 'no_layout.html', layout: false
 
 # ビルド時の設定

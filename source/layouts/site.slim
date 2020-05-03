@@ -10,8 +10,5 @@ html lang='ja'
     = stylesheet_link_tag "style"
     = favicon_tag 'images/favicon.png'
 
-  body.post
-    = partial 'header'
-    = partial 'nav'
+  body.site
     = yield
-    = partial 'footer'
