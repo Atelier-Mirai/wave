@@ -5,9 +5,9 @@ title: スケッチが楽しくなるノート - WAVE
 article
   h1 スケッチが楽しくなるノート
 
-  time datetime="2020-07-25"
+  time datetime="2020-01-25"
     i.far.fa-clock
-    | 令和二年七月二五日
+    | 令和二年一月二五日
 
   figure
     = image_tag "note.jpg", alt: "いろいろなスケッチを書き込んだノート"
@@ -17,5 +17,5 @@ article
   p スマホのアプリも便利ですが、たまには紙とペンを使ってみるのもお勧めです
 
 .submenu
-  = partial 'profile'
-  = partial 'pickup'
+  = partial 'profile', locals: { shape: 'circular' }
+  = partial 'pickup', locals: { hidden_item: 1 }

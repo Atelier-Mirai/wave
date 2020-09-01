@@ -3,3 +3,7 @@
 @import "wa_no_iro";
 @import "_spacing";
 @import "mixin";
+
+.hidden {
+  display: none !important;
+}

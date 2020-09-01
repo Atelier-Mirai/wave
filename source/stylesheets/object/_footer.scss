@@ -1,17 +1,27 @@
 /* フッター */
 footer {
   grid-row: foot;
-  justify-self: center;
-  align-self: center;
+  // justify-self: center;
+  // align-self: center;
   font-size: 15px;
   font-family: 'Dancing Script', cursive;
+  background: $sakurairo;
+  grid-column: 1 / -1;
+
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  p {
+    // text-align: center;
+    // margin: auto 0;
+  }
 }
 
 /* フッターのバー */
-body::after {
-  content: "";
-  background-color: $sakurairo;
-  grid-column: 1 / -1;
-  grid-row: foot;
-  z-index: -1;
-}
+// body::after {
+//   content: "";
+//   // background-color: $sakurairo;
+//   grid-column: 1 / -1;
+//   grid-row: foot;
+//   z-index: -1;
+// }

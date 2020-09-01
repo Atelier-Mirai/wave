@@ -1,0 +1,20 @@
+---
+title: カラフルなタイル - WAVE
+---
+
+article
+  h1 カラフルなタイル
+
+  time datetime="2020-05-25"
+    i.far.fa-clock
+    | 令和二年五月二五日
+
+  figure
+    = image_tag "tile.jpg", alt: "カラフルなタイル"
+
+  p カラフルなタイル
+  p 初夏の日差しを感じる頃、タイルが煌めきます。
+
+.submenu
+  = partial 'profile', locals: { shape: 'diamond' }
+  = partial 'pickup', locals: { hidden_item: 5 }

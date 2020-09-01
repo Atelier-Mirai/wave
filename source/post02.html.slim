@@ -1,0 +1,20 @@
+---
+title: 緑のアクセントならこれ - WAVE
+---
+
+article
+  h1 緑のアクセントならこれ
+
+  time datetime="2020-02-25"
+    i.far.fa-clock
+    | 令和二年二月二五日
+
+  figure
+    = image_tag "plant.jpg", alt: "緑のアクセント サボテン"
+
+  p 緑の植物は、心を和ませてくれます。
+  p 無口に佇むその姿に癒されるひとときを感じつつ、日々を生きています。
+
+.submenu
+  = partial 'profile', locals: { shape: 'triangle' }
+  = partial 'pickup', locals: { hidden_item: 2 }

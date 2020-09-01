@@ -1,23 +1,33 @@
 aside
   h2 PICKUP
   ul
-    li
+    li class = (hidden_item == 1 ? 'hidden' : '')
+      a href="post01.html"
+        figure
+          = image_tag 'note.jpg'
+        h3 スケッチが楽しくなるノート
+    li class = (hidden_item == 2 ? 'hidden' : '')
       a href="post02.html"
         figure
           = image_tag 'plant.jpg'
         h3 緑のアクセントならこれ
-    li
+    li class = (hidden_item == 3 ? 'hidden' : '')
       a href='post03.html'
         figure
           = image_tag 'items.jpg'
         h3 小物と飾り棚の組み合わせ
-    li
+    li class = (hidden_item == 4 ? 'hidden' : '')
       a href='post04.html'
         figure
           = image_tag 'chair.jpg'
         h3 居心地のいい部屋にあるもの
-    li
+    li class = (hidden_item == 5 ? 'hidden' : '')
       a href='post05.html'
         figure
           = image_tag 'tile.jpg'
         h3 カラフルなタイル
+    li class = (hidden_item == 6 ? 'hidden' : '')
+      a href='post06.html'
+        figure
+          = image_tag 'fall_foliage.jpg'
+        h3 真木渓谷の紅葉
