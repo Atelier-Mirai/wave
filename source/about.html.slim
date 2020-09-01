@@ -18,5 +18,5 @@ article
       td ときどき更新中。最新記事の一覧はトップページをご覧ください。
 
 .submenu
-  = partial "profile"
-  = partial "pickup"
+  = partial "profile", locals: { shape: 'circular' }
+  = partial "pickup", locals: { hidden_item: 0 }

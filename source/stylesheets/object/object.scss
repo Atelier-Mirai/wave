@@ -1,12 +1,14 @@
 // ページをまたいで使われる各種パーツを定義するクラス
+@import "../utility/wa_no_iro";
+@import "../utility/mixin";
 
 @import "footer";
 @import "form";
 @import "header";
 @import "hero";
 @import "nav";
-@import "post_article";
-@import "post_submenu";
+@import "site_article";
+@import "site_submenu";
 @import "section";
 @import "table";
 @import "title";

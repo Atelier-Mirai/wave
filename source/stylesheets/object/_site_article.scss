@@ -1,5 +1,5 @@
 /* 記事ページ */
-.post article {
+.site article {
   grid-row: kiji;
   & > * {
     margin-top: 1em;
@@ -23,7 +23,7 @@
 }
 
 /* 記事メニューバー */
-.post::before {
+.site::before {
   content: '';
   background: $sumireiro;
   height: 1px;
@@ -41,7 +41,7 @@
       font-size: 18px;
     }
   }
-  .post::before {
+  .site::before {
     margin-top: -20px;
   }
 }

@@ -1,0 +1,266 @@
+@charset "UTF-8";
+/* mixin */
+/* フッター */
+footer {
+  grid-row: foot;
+  font-size: 15px;
+  font-family: 'Dancing Script', cursive;
+  background: #fef4f4;
+  grid-column: 1 / -1;
+  display: grid;
+  justify-content: center;
+  align-items: center; }
+
+/* フッターのバー */
+/* お問い合わせフォーム */
+form p {
+  margin-bottom: 20px; }
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px; }
+
+form textarea {
+  height: 120px; }
+
+form input[type="submit"] {
+  background: #fe9c41;
+  border: none;
+  color: #eaf4fc;
+  font-size: 16px;
+  letter-spacing: 6px; }
+
+@media (min-width: 768px) {
+  form input[type="submit"] {
+    width: 250px; } }
+
+/* ヘッダー */
+header {
+  grid-row: head;
+  justify-self: center;
+  align-self: center; }
+  header a {
+    text-decoration: none;
+    font-size: 40px;
+    color: #e6b422;
+    font-family: 'Dancing Script', cursive; }
+
+/* デスクトップ版 */
+@media (min-width: 768px) {
+  header {
+    justify-self: start; } }
+
+/* ヒーローイメージ */
+.hero {
+  grid-column: 1 / -1;
+  grid-row: title / span 2; }
+  @media (min-width: 320px) {
+    .hero img {
+      width: 100%;
+      height: 448px; } }
+  @media (min-width: 375px) {
+    .hero img {
+      width: 100%;
+      height: 547px; } }
+  @media (min-width: 414px) {
+    .hero img {
+      width: 100%;
+      height: 616px; } }
+  .hero img {
+    object-fit: cover;
+    vertical-align: bottom;
+    filter: brightness(70%);
+    z-index: -1;
+    position: relative; }
+
+/* デスクトップ版 */
+@media (min-width: 768px) {
+  .hero {
+    grid-row: title;
+    margin-top: -20px; } }
+
+/* ナビゲーションメニュー */
+nav {
+  grid-row: head;
+  justify-self: center;
+  align-self: end; }
+  nav ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 20px; }
+    nav ul li a {
+      color: #595857;
+      font-size: 12px;
+      text-decoration: none;
+      font-weight: bold; }
+      nav ul li a:hover {
+        color: #0c0c0b; }
+
+/* デスクトップ版 */
+@media (min-width: 768px) {
+  nav {
+    justify-self: end;
+    align-self: center; } }
+
+/* 記事ページ */
+.site article {
+  grid-row: kiji; }
+  .site article > * {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    display: block; }
+  .site article figure {
+    width: 40%;
+    float: left;
+    margin-right: 20px; }
+  .site article p {
+    line-height: 2; }
+
+/* 時計アイコン */
+.fa-clock {
+  color: #7058a3;
+  margin-right: 5px; }
+
+/* 記事メニューバー */
+.site::before {
+  content: '';
+  background: #7058a3;
+  height: 1px;
+  grid-column: 1 / -1;
+  grid-row: kiji; }
+
+/* デスクトップ版 */
+@media (min-width: 768px) {
+  article h1 {
+    font-size: 42px; }
+  article p {
+    font-size: 18px; }
+  .site::before {
+    margin-top: -20px; } }
+
+.site .submenu {
+  grid-row: submenu; }
+  .site .submenu aside {
+    border: solid 1px #595857;
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center; }
+    .site .submenu aside h2 {
+      border-bottom: solid 1px #595857;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      color: #7058a3;
+      font-weight: normal;
+      font-family: 'Dancing Script', cursive; }
+    .site .submenu aside p {
+      font-size: 14px; }
+    .site .submenu aside ul {
+      grid-row: submenu;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px 10px;
+      list-style-type: none;
+      padding: 0;
+      text-align: left; }
+    .site .submenu aside a {
+      color: #595857;
+      font-size: 14px;
+      text-decoration: none;
+      font-weight: bold; }
+      .site .submenu aside a:hover {
+        color: #0c0c0b; }
+      .site .submenu aside a:hover {
+        text-decoration: underline; }
+      .site .submenu aside a h3 {
+        font-size: 14px; }
+
+/* 記事一覧 */
+section {
+  grid-row: recent;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 10px; }
+  section h2 {
+    grid-column: 1 / -1;
+    font-family: 'Dancing Script', cursive;
+    font-size: 20px;
+    font-weight: normal;
+    text-align: center; }
+  section a {
+    color: #595857;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: bold; }
+    section a:hover {
+      color: #0c0c0b; }
+    section a:hover {
+      text-decoration: underline; }
+    section a h3 {
+      font-size: 14px; }
+
+/* デスクトップ版 */
+@media (min-width: 768px) {
+  section {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 20px; } }
+
+table {
+  border-collapse: collapse; }
+  table th,
+  table td {
+    border: solid 1px #595857;
+    padding: 20px; }
+  table th {
+    width: 7em;
+    text-align: center;
+    background: #975e45;
+    color: #eaf4fc; }
+  table td {
+    background: #d6c6af; }
+
+/* タイトル */
+.title {
+  grid-row: title;
+  justify-content: center;
+  align-self: center;
+  color: #fef4f4;
+  font-size: 44px;
+  font-weight: normal;
+  line-height: 1.2;
+  text-shadow: 0 0 5px #d6c6af;
+  text-align: center;
+  font-family: 'Dancing Script', cursive; }
+
+/* サブタイトル */
+.subtitle {
+  grid-row: sub;
+  text-align: center; }
+  .subtitle a {
+    color: #fef4f4;
+    text-decoration: none;
+    border: solid 1px #fef4f4;
+    padding: 10px 40px;
+    display: inline-block;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: rgba(214, 198, 175, 0.5); }
+    .subtitle a:hover {
+      background-color: rgba(179, 150, 108, 0.7); }
+  .subtitle img {
+    width: 200px; }
+
+/* デスクトップ版 */
+@media (min-width: 768px) {
+  .title {
+    grid-column: 2 / span 2;
+    max-width: 240px; }
+  .subtitle {
+    grid-column: 4 / span 4;
+    align-self: center; }
+    .subtitle img {
+      width: 80%;
+      max-width: 320px; } }

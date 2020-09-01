@@ -23,3 +23,7 @@ article
         textarea name="comment" required="required"
     p
       input type="submit" value="送信"
+
+.submenu
+  = partial "profile", locals: { shape: 'circular' }
+  = partial "pickup", locals: { hidden_item: 0 }

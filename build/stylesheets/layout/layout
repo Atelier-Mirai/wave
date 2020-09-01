@@ -1,0 +1,69 @@
+@charset "UTF-8";
+/* mixin */
+/* ページ全体の設定 */
+body {
+  display: grid;
+  grid-template-columns: 20px 1fr 20px;
+  row-gap: 20px;
+  font-family: sans-serif;
+  /* ゴシック系フォントで表示 */
+  color: #15050a;
+  height: 100%; }
+
+/* パーツの配置 */
+body > * {
+  grid-column: 2 / -2; }
+
+/* 列の設定 (トップページ)*/
+body.top {
+  grid-template-rows: [head] 100px [title] auto [sub] auto [recent] auto [foot] 100px; }
+
+/* 列の設定 (サイトページ)*/
+body.site {
+  grid-template-rows: [head] 100px [kiji] auto [submenu] auto [foot] 100px; }
+
+/* デスクトップ版 */
+@media (min-width: 768px) {
+  body.top {
+    grid-template-columns: 0.2fr repeat(6, 1fr) 0.2fr;
+    grid-template-rows: [head] 100px [title sub] auto [recent] auto [foot] 100px;
+    column-gap: 5%; }
+  body.site {
+    grid-template-columns: 0.2fr repeat(6, 1fr) 0.2fr;
+    grid-template-rows: [head] 100px [kiji submenu] auto [foot] 100px;
+    column-gap: 5%; }
+    body.site article {
+      grid-column: 2 / span 4; }
+    body.site .submenu {
+      grid-column: 6 / span 2; } }
+
+.circular {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%; }
+
+.triangle {
+  width: 120px;
+  height: 120px;
+  clip-path: polygon(50% 0, 0 100%, 100% 100%); }
+
+.square {
+  width: 120px;
+  height: 120px;
+  object-fit: cover; }
+
+.rhombus {
+  width: calc(120px * 0.707);
+  height: calc(120px * 0.707);
+  transform: rotate(45deg);
+  margin: 1rem; }
+
+.diamond {
+  width: 120px;
+  height: 120px;
+  clip-path: polygon(50% 0, 15% 50%, 50% 100%, 85% 50%); }
+
+.heart {
+  width: 140px;
+  height: 130px;
+  clip-path: path("M15,45\a                    A30,30,0,0,1,75,45\a                    A30,30,0,0,1,135,45\a                    Q135,90,75,130\a                    Q15,90,15,45 Z"); }

@@ -25,7 +25,7 @@ body.top {
 }
 
 /* 列の設定 (サイトページ)*/
-body.post {
+body.site {
   grid-template-rows:
     [head] 100px
     [kiji] auto
@@ -44,7 +44,7 @@ body.post {
       [foot] 100px;
     column-gap: 5%;
   }
-  body.post {
+  body.site {
     grid-template-columns: 0.2fr repeat(6, 1fr) 0.2fr;
     grid-template-rows:
       [head] 100px

@@ -1,8 +1,10 @@
 // パーツの配置や、ラッパーとしての幅や高さなどを決定するクラス
+@import "../utility/wa_no_iro";
+@import "../utility/mixin";
 
 @import "body";
 
-// 円形に
+// 円形にする
 .circular {
   width: 120px;
   height: 120px;
@@ -33,7 +35,6 @@
 }
 
 // 菱形に切り抜く
-// https://webparts.cman.jp/img/clip/
 .diamond {
   width: 120px;
   height: 120px;
@@ -45,5 +46,9 @@
 .heart {
   width: 140px;
   height: 130px;
-  clip-path: path('M15,45 A30,30,0,0,1,75,45 A30,30,0,0,1,135,45 Q135,90,75,130 Q15,90,15,45 Z')
+  clip-path: path('M15,45
+                   A30,30,0,0,1,75,45
+                   A30,30,0,0,1,135,45
+                   Q135,90,75,130
+                   Q15,90,15,45 Z')
 }
