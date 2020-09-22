@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>WAVE</title>
+    <title>YouTube - WAVE</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" />
     <link href="stylesheets/style.css" rel="stylesheet" /><link href="images/favicon.png" rel="icon" type="image/png" />
@@ -23,51 +23,152 @@
           <a href="/contact.html">お問い合わせ</a>
         </li>
       </ul>
-    </nav><h2 id="youtube-">YouTube 埋め込み</h2>
-    
-    <p>p.lead
-      | 「財政破綻するー！」を完全論破　政府の赤字は国民の黒字｜MMT国際シンポジウム特別講演｜三橋貴明
-    .embed-responsive.embed-responsive-16by9
-      iframe.embed-responsive-item src="https://www.youtube.com/embed/kFz1AWzwMsU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true"</p>
-    
-    <p>h2
-      | Google Map の埋め込み
-    p.lead
-      | BootStrap CSS 使用
-    .embed-responsive.embed-responsive-16by9
-      iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3264.2239139130525!2d136.95810185211104!3d35.10111928023702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60037bdcb03bb1c9%3A0x63b081ef0426720d!2z44Kx44Oz44K_44OD44Kt44O844OV44Op44Kk44OJ44OB44Kt44Oz6YeO5Lim5bqX!5e0!3m2!1sja!2sjp!4v1587631792147!5m2!1sja!2sjp" allowfullscreen="true" aria-hidden="false"</p>
-    
-    <style>
-    .map {
-      box-sizing: border-box;
-      width: 100%;
-    }
-    .map .inner {
-      overflow: hidden;
-      position: relative;
-      padding-top: 150%;
-    }
-    @media (min-width: 768px) {
-      .map .inner {
-        padding-top: calc(56.25%);
-      }
-    }
-    .map .inner iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-    </style>
-    
-    <p>&lt;div class="map" width: 600px;&gt;</p>
-    <div class="inner">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3264.2239139130525!2d136.95810185211104!3d35.10111928023702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60037bdcb03bb1c9%3A0x63b081ef0426720d!2z44Kx44Oz44K_44OD44Kt44O844OV44Op44Kk44OJ44OB44Kt44Oz6YeO5Lim5bqX!5e0!3m2!1sja!2sjp!4v1587631792147!5m2!1sja!2sjp" width="100%" height="auto" frameborder="1" style="border:0;" allowfullscreen="">
-      &lt;/div&gt;
-    &lt;/div&gt;
-    </iframe></div>
-    <footer>
+    </nav><style type="text/css">
+  .video {
+    box-sizing: border-box;
+    width: 100%;
+  }
+  
+  .video .inner {
+    overflow: hidden;
+    position: relative;
+    padding-top: calc(100% * 9 / 16);
+  }
+  
+  .video .inner iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>
+<article>
+  <h1>
+    動画を埋め込む(YouTube)
+  </h1>
+  <figure>
+    <img src="images/youtube.jpg" alt="YouTube" />
+  </figure>
+  <p>
+    Webサイトに動画を掲載するにはどのようにしたら良いでしょうか？<br />動画共用サイトとして有名なところでは、<a href="https://youtube.com">YouTube</a>や<a href="https://vimeo.com">Vimeo</a>があります。<br />ここでは、YouTubeの埋め込み方法をご紹介します。<br />可愛い猫の動画を埋め込んでみました。
+  </p>
+  <h1>YouTubeの埋め込み例</h1><div class="video"><div class="inner"><iframe src="https://www.youtube.com/embed/OAo1GBrdvzg?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe></div></div><figcaption>index.html</figcaption><div class="highlight"><pre class="highlight html"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+  <span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span>
+          <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"style.css"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>YouTube<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"video"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"inner"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;iframe</span> <span class="na">src=</span><span class="s">"https://www.youtube.com/embed/OAo1GBrdvzg?rel=0&amp;showinfo=0"</span>
+                <span class="na">frameborder=</span><span class="s">"0"</span>
+                <span class="na">allowfullscreen</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/iframe&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+  <span class="nt">&lt;/html&gt;</span></code></pre></div><figcaption>style.css</figcaption><div class="highlight"><pre class="highlight css"><code><span class="nc">.video</span> <span class="p">{</span>
+    <span class="nl">box-sizing</span><span class="p">:</span> <span class="n">border-box</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+  <span class="p">}</span>
+  
+  <span class="nc">.video</span> <span class="nc">.inner</span> <span class="p">{</span>
+    <span class="nl">overflow</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+    <span class="nl">padding-top</span><span class="p">:</span> <span class="n">calc</span><span class="p">(</span><span class="m">100%</span> <span class="err">*</span> <span class="m">9</span> <span class="p">/</span> <span class="m">16</span><span class="p">);</span>
+  <span class="p">}</span>
+  
+  <span class="nc">.video</span> <span class="nc">.inner</span> <span class="nt">iframe</span> <span class="p">{</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+    <span class="nl">top</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">left</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+  <span class="p">}</span></code></pre></div><ol>
+  <li>
+    <p>埋め込みたい YouTube 動画に移動します。
+<a href="https://youtu.be/OAo1GBrdvzg">https://youtu.be/OAo1GBrdvzg</a></p>
+  </li>
+  <li>
+    <p>動画の下にある 「共有」をクリックします。
+  <img src="images/video/youtube1.jpg" alt="猫1" /></p>
+  </li>
+  <li>
+    <p>「埋め込む」 をクリックします。
+  <img src="images/video/youtube2.jpg" alt="猫2" /></p>
+  </li>
+  <li>
+    <p>ボックスに表示されている HTML コードをコピーします。
+  <img src="images/video/youtube3.jpg" alt="猫3" /></p>
+  </li>
+  <li>
+    <p>ウェブサイトに、HTML コードを貼り付けます。</p>
+  </li>
+  <li>
+    <p>不要な部分もあるので、必要な部分だけを残して完成です。
+<code>allow="accelerometer;(略)</code>を削除しています。
+<br />
+<code>?rel=0&amp;showinfo=0"</code>を付けることで、
+<br /></p>
+  </li>
+</ol>
+<ul>
+  <li> 動画再生した後に関連動画が表示されなくなります。</li>
+  <li> 動画再生中の表題が非表示になり、すっきりします。</li></ul>
+
+<h3 id="section">参考</h3>
+<p><a href="https://developers.google.com/youtube/player_parameters?hl=ja#Manual_IFrame_Embeds">YouTube 埋め込みプレーヤーとプレーヤーのパラメータ</a></p>
+
+</article>
+<div class="submenu">
+  <aside>
+    <h2>
+      APPENDIX
+    </h2>
+    <ul>
+      <li>
+        <a href="google_map.html">
+          <figure>
+            <img src="images/google_map.jpg" alt="" />
+          </figure>
+        </a>
+      </li>
+      <li class="hidden">
+        <a href="youtube.html">
+          <figure>
+            <img src="images/youtube.jpg" alt="" />
+          </figure>
+        </a>
+      </li>
+      <li>
+        <a href="vimeo.html">
+          <figure>
+            <img src="images/vimeo.jpg" alt="" />
+          </figure>
+        </a>
+      </li>
+      <li>
+        <a href="magnific_popup.html">
+          <figure>
+            <img src="images/magnific_popup.jpg" alt="" />
+          </figure>
+        </a>
+      </li>
+      <li>
+        <a href="swiper.html">
+          <figure>
+            <img src="images/swiper.jpg" alt="" />
+          </figure>
+        </a>
+      </li>
+    </ul>
+  </aside>
+</div><footer>
       <p>
         Copyright 令和元年 ©️ WAVE 
       </p>
