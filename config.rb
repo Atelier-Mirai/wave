@@ -36,5 +36,8 @@ set :slim, {
   # 属性のショートカット
   # Slim コード中、「&text name="user"」と書くと、
   # <input type="text" name="user"> とレンダリングされる。
-  shortcut: {'&' => {tag: 'input', attr: 'type'}, '#' => {attr: 'id'}, '.' => {attr: 'class'}}
+  # shortcut: {'&' => {tag: 'input', attr: 'type'}, '#' => {attr: 'id'}, '.' => {attr: 'class'}}
 }
+
+# sintax highlight
+activate :syntax, line_numbers: false

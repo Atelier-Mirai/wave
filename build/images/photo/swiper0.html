@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Swiper demo</title>
+<!-- Link Swiper's CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+</head>
+
+<body>
+<h1>カルーセル(回転木馬) Swiper.js</h1>
+<p>
+  <a href="https://swiperjs.com/demos/">公式サイト</a>
+</p>
+
+<!-- Carouselのサイズを設定 -->
+<style>
+  .swiper-container {
+    width: 800px;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  img {
+    width: 600px;
+    height: auto;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+</style>
+
+<h2>フェイドアウトするカルーセル</h2>
+<!-- Swiper -->
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <img src="images/tora.jpg">
+    </div>
+    <div class="swiper-slide">
+      <img src="images/tsuru.jpg">
+    </div>
+    <div class="swiper-slide">
+      <img src="images/zou.jpg">
+    </div>
+  </div>
+  <div class="swiper-pagination fade-pagination"></div>
+  <!-- Add Arrows -->
+  <div class="swiper-button-prev fade-button-prev"></div>
+  <div class="swiper-button-next fade-button-next"></div>
+</div>
+
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+  let fade = new Swiper('.swiper-container', {
+    loop: true,     // 環状化あり
+    effect: 'fade', // スライド切替効果
+    autoplay: {     // 自動再生
+      delay: 3000,  // 3000msで次のスライドに
+                    // 利用者の操作により自動再生を停止可
+      disableOnInteraction: true
+    },
+    pagination: {   // 頁付
+      el: '.fade-pagination',
+      clickable: true,
+    },
+    navigation: {   // 左右の＜＞
+      prevEl: '.fade-button-prev',
+      nextEl: '.fade-button-next',
+    },
+  });
+</script>
+
+
+
+
+
+
+</body>
+</html>

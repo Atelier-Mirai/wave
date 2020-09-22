@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Google Map - WAVE</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" />
+    <link href="stylesheets/style.css" rel="stylesheet" /><link href="images/favicon.png" rel="icon" type="image/png" />
+  </head>
+  <body class="site">
+    <header>
+      <a href="index.html">WAVE</a>
+    </header><nav>
+      <ul>
+        <li>
+          <a href="/">トップ</a>
+        </li>
+        <li>
+          <a href="/about.html">サイトについて</a>
+        </li>
+        <li>
+          <a href="/contact.html">お問い合わせ</a>
+        </li>
+      </ul>
+    </nav><style type="text/css">
+  .map {
+    box-sizing: border-box;
+    width: 100%;
+  }
+  
+  .map .inner {
+    overflow: hidden;
+    position: relative;
+    padding-top: 150%;
+  }
+  @media (min-width: 768px) {
+    .map .inner {
+      padding-top: calc(100% * 9 / 16);
+    }
+  }
+  
+  .map .inner iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>
+<article>
+  <h1>
+    地図を埋め込む
+  </h1>
+  <figure>
+    <img src="images/google_map.jpg" alt="Google Map" />
+  </figure>
+  <p>
+    Webサイトを作っていく際に、自社への案内地図などを載せたい場面は多々あると思います。
+  </p>
+  <p>
+    ここでは、地図表示に良く使われている Google Map を、自分のWebサイトで使う方法をご紹介します。
+  </p>
+  <h2>案内地図の作成例</h2><div class="map"><div class="inner"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3264.098229592375!2d136.94909095223227!3d35.10425798023631!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60037b0d5843e2af%3A0x282e3c573e3f00d8!2z44Kz44Oh44OA54-I55CyIOmHjuS4puW6lw!5e0!3m2!1sja!2sjp!4v1592795030975!5m2!1sja!2sjp" style="border:0;"></iframe></div></div><figcaption>index.html</figcaption><div class="highlight"><pre class="highlight html"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+  <span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span>
+          <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"style.css"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>案内地図<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"map"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"inner"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;iframe</span> <span class="na">src=</span><span class="s">"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3264.098229592375!2d136.94909095223227!3d35.10425798023631!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60037b0d5843e2af%3A0x282e3c573e3f00d8!2z44Kz44Oh44OA54-I55CyIOmHjuS4puW6lw!5e0!3m2!1sja!2sjp!4v1592795030975!5m2!1sja!2sjp"</span> <span class="na">style=</span><span class="s">"border:0;"</span><span class="nt">&gt;&lt;/iframe&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+  <span class="nt">&lt;/html&gt;</span></code></pre></div><figcaption>style.css</figcaption><div class="highlight"><pre class="highlight css"><code><span class="nc">.map</span> <span class="p">{</span>
+    <span class="nl">box-sizing</span><span class="p">:</span> <span class="n">border-box</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+  <span class="p">}</span>
+  
+  <span class="nc">.map</span> <span class="nc">.inner</span> <span class="p">{</span>
+    <span class="nl">overflow</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+    <span class="nl">padding-top</span><span class="p">:</span> <span class="m">150%</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">@media</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">768px</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nc">.map</span> <span class="nc">.inner</span> <span class="p">{</span>
+      <span class="nl">padding-top</span><span class="p">:</span> <span class="n">calc</span><span class="p">(</span><span class="m">100%</span> <span class="err">*</span> <span class="m">9</span> <span class="p">/</span> <span class="m">16</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  
+  <span class="nc">.map</span> <span class="nc">.inner</span> <span class="nt">iframe</span> <span class="p">{</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+    <span class="nl">top</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">left</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+  <span class="p">}</span></code></pre></div><ol>
+    <li><a href="https://www.google.co.jp/maps">Google Map</a> を開きます。
+    <img src="images/map/map1.jpg" alt="地図の作成1" /></li>
+    <li>左上の検索窓に、調べたい場所名や住所を入力します。
+    <img src="images/map/map2.jpg" alt="地図の作成2" /></li>
+    <li>ここでは、「コメダ珈琲野並店」と入力し、虫眼鏡ボタンを押します。
+    <img src="images/map/map3.jpg" alt="地図の作成3" /></li>
+    <li>コメダ珈琲 野並店が表示されました。
+    埋め込むために必要なデータを表示させたいので、右下の「共有」ボタンを押します。
+    <img src="images/map/map4.jpg" alt="地図の作成4" /></li>
+    <li>ここでは自分のWebサイトの中にGoogle Mapを埋め込みたいので、「地図を埋め込む」をクリックします。
+    <img src="images/map/map5.jpg" alt="地図の作成5" /></li>
+    <li>「HTMLをコピー」をクリックして、Atomに貼り付けます。
+    <img src="images/map/map6.jpg" alt="地図の作成6" /></li>
+    <li>コピーしたhtmlには不要な部分もあるので、必要な部分だけを残して完成です。</li>
+  </ol>
+  
+</article>
+<div class="submenu">
+  <aside>
+    <h2>
+      APPENDIX
+    </h2>
+    <ul>
+      <li class="hidden">
+        <a href="google_map.html">
+          <figure>
+            <img src="images/google_map.jpg" alt="" />
+          </figure>
+        </a>
+      </li>
+      <li>
+        <a href="youtube.html">
+          <figure>
+            <img src="images/youtube.jpg" alt="" />
+          </figure>
+        </a>
+      </li>
+      <li>
+        <a href="vimeo.html">
+          <figure>
+            <img src="images/vimeo.jpg" alt="" />
+          </figure>
+        </a>
+      </li>
+      <li>
+        <a href="magnific_popup.html">
+          <figure>
+            <img src="images/magnific_popup.jpg" alt="" />
+          </figure>
+        </a>
+      </li>
+      <li>
+        <a href="swiper.html">
+          <figure>
+            <img src="images/swiper.jpg" alt="" />
+          </figure>
+        </a>
+      </li>
+    </ul>
+  </aside>
+</div><footer>
+      <p>
+        Copyright 令和元年 ©️ WAVE 
+      </p>
+    </footer>
+  </body>
+</html>

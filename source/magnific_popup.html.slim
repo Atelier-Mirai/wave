@@ -1,0 +1,251 @@
+---
+title: Magnific Popup - WAVE
+---
+
+article
+  h1 写真を見せる(Magnific Popup)
+
+  figure
+    = image_tag "magnific_popup.jpg", alt: "Magnific Popup"
+
+  p
+    | Webサイトに写真を掲載することはよくあります。
+    br
+    | 先人の方が様々な有益なライブラリを提供してくださっていますが、ここでは、
+    = link_to "Magnific Popup", "https://dimsemenov.com/plugins/magnific-popup/"
+    | をご案内します。公式サイトによると、
+    br
+    backquote
+      | Magnific Popup は、パフォーマンスに焦点を当て、
+      | あらゆるデバイスでユーザーに最高の体験を提供することを目的とした、
+      | 応答性の高いライトボックス＆ダイアログスクリプトです。
+    | と紹介されています。(Magnific とは、「壮大な」という意味)
+
+  <h1>Magnific Popupの使用例</h1>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <link rel="stylesheet" href="images/photo/lib/magnific-popup.css">
+  <script src="images/photo/lib/jquery.magnific-popup.min.js"></script>
+  <link rel="stylesheet" href="images/photo/magnific-popup-custom.css">
+  <script src="images/photo/magnific-popup-custom.js"></script>
+  <h2>写真展</h2>
+  <p>小さな写真(サムネイル)をクリックすると、大きな写真で見ることができます。</p>
+  <div class="gallery">
+    <a href="images/photo/tora.jpg" title="The Cleaner">
+      <img src="images/photo/tora_s.jpg">
+    </a>
+    <a href="images/photo/tsuru.jpg" title="Winter Dance">
+      <img src="images/photo/tsuru_s.jpg">
+    </a>
+    <a href="images/photo/zou.jpg" title="The Uninvited Guest">
+      <img src="images/photo/zou_s.jpg">
+    </a>
+    <a href="images/photo/saru.jpg" title="Oh no, not again!">
+      <img src="images/photo/saru_s.jpg">
+    </a>
+    <a href="images/photo/hakucho.jpg" title="Swan Lake">
+      <img src="images/photo/hakucho_s.jpg">
+    </a>
+    <a href="images/photo/araiguma.jpg" title="The Shake">
+      <img src="images/photo/araiguma_s.jpg">
+    </a>
+    <a href="images/photo/kuma.jpg" title="Who's that, mommy?">
+      <img src="images/photo/kuma_s.jpg">
+    </a>
+  </div>
+
+  figcaption index.html
+  = code('html') do
+    |
+      <!DOCTYPE html>
+      <html>
+      <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Magnific Popup 使用例</title>
+
+      <!-- jQuery -->
+      <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+      <!-- Magnific Popup -->
+      <link rel="stylesheet" href="lib/magnific-popup.css">
+      <script src="lib/jquery.magnific-popup.min.js"></script>
+
+      <!-- Magnific Popup の為の設定 -->
+      <link rel="stylesheet" href="magnific-popup-custom.css">
+      <script src="magnific-popup-custom.js"></script>
+      </head>
+
+      <body>
+      <h1>Magnific Popup</h1>
+
+      <h2>写真展</h2>
+      <div class="gallery">
+        <a href="images/tora.jpg" title="The Cleaner">
+          <img src="images/tora_s.jpg">
+        </a>
+        <a href="images/tsuru.jpg" title="Winter Dance">
+          <img src="images/tsuru_s.jpg">
+        </a>
+        <a href="images/zou.jpg" title="The Uninvited Guest">
+          <img src="images/zou_s.jpg">
+        </a>
+        <a href="images/saru.jpg" title="Oh no, not again!">
+          <img src="images/saru_s.jpg">
+        </a>
+        <a href="images/hakucho.jpg" title="Swan Lake">
+          <img src="images/hakucho_s.jpg">
+        </a>
+        <a href="images/araiguma.jpg" title="The Shake">
+          <img src="images/araiguma_s.jpg">
+        </a>
+        <a href="images/kuma.jpg" title="Who's that, mommy?">
+          <img src="images/kuma_s.jpg">
+        </a>
+      </div>
+
+      </body>
+      </html>
+
+  figcaption magnific-popup-custom.css
+  = code('css') do
+    |
+      /* 画像の大きさを指定 */
+      .gallery img {
+        width: 75px;
+        height: 75px;
+      }
+      /* a タグの title 属性が表示されないように */
+      .gallery a {
+        color: transparent; /* 透明色 */
+      }
+
+      /* 写真をクリックしたときに、ズームアップする為の設定 */
+      .mfp-with-zoom .mfp-container,
+      .mfp-with-zoom.mfp-bg {
+        opacity: 0;
+        -webkit-backface-visibility: hidden;
+        transition: all 0.3s ease-out;
+      }
+      .mfp-with-zoom.mfp-ready .mfp-container {
+          opacity: 1;
+      }
+      .mfp-with-zoom.mfp-ready.mfp-bg {
+          opacity: 0.8;
+      }
+      .mfp-with-zoom.mfp-removing .mfp-container,
+      .mfp-with-zoom.mfp-removing.mfp-bg {
+        opacity: 0;
+      }
+
+       /* Simple fade transition */
+      .mfp-fade.mfp-bg {
+        opacity: 0;
+        transition: all 0.15s ease-out;
+      }
+      .mfp-fade.mfp-bg.mfp-ready {
+        opacity: 0.8;
+      }
+      .mfp-fade.mfp-bg.mfp-removing {
+        opacity: 0;
+      }
+
+      .mfp-fade.mfp-wrap .mfp-content {
+        opacity: 0;
+        transition: all 0.15s ease-out;
+      }
+      .mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+        opacity: 1;
+      }
+      .mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+        opacity: 0;
+      }
+
+
+  figcaption magnific-popup-custom.js
+  = code('javascript') do
+    |
+      $(function() {
+        // 写真展
+        $('.gallery').each(function(){
+          $(this).magnificPopup({
+            /* 基本設定いろいろ */
+            delegate: 'a',
+            type: 'image',
+            tLoading: 'Loading image #%curr%...',
+            mainClass: 'mfp-img-mobile',
+            gallery: {
+              enabled: true,
+              navigateByImgClick: true,
+              preload: [0,1],
+              arrowMarkup: '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></button>',
+              tPrev: 'Previous (Left arrow key)',
+              tNext: 'Next (Right arrow key)',
+              tCounter: '<span class="mfp-counter">%curr% of %total%</span>'
+            },
+            image: {
+              tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+              titleSrc: function(item) {
+                return item.el.attr('title') + '<small>by Marsel Van Oosten</small>';
+              }
+            },
+            /* クリックしたときにズームアップするための設定 */
+            mainClass: 'mfp-with-zoom',
+            zoom: {
+              enabled: true,
+              duration: 300,
+              easing: 'ease-in-out',
+              opener: function(openerElement) {
+                return openerElement.is('img') ? openerElement : openerElement.find('img');
+              }
+            }
+          });
+        });
+
+        // YouTube, Vimeo, Google Map
+        $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
+          disableOn: 700,
+          type: 'iframe',
+          mainClass: 'mfp-fade',
+          removalDelay: 160,
+          preloader: false,
+
+          fixedContentPos: false
+        });
+      });
+
+
+  markdown:
+    jQueryを使うので、読み込んでいます。
+    また、libディレクトリに、Magnific Popup 用の CSS と JavaScript を置いています。
+    公式サイトよりダウンロードできますので、置いておきましょう。
+    写真ギャラリー用の画像を、imageディレクトリに入れておきます。
+    サムネイル画像も準備しておきます。
+    Magnific Popup を調整するためのcssとして、magnific-popup-custom.cssを、
+    jsとして、magnific-popup-custom.jsを用意して、完成です。
+
+  h2 動画や地図の表示
+  p
+    | YouTube や Vimeo、Google Map の表示も可能です。
+
+  <div class="html-code">
+    <a class="popup-youtube" href="https://www.youtube.com/watch?v=OAo1GBrdvzg">YouTube</a>&nbsp;
+    <a class="popup-vimeo" href="https://vimeo.com/354152854">Vimeo</a>&nbsp;
+    <a class="popup-gmaps" href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3264.098229592375!2d136.94909095223227!3d35.10425798023631!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60037b0d5843e2af%3A0x282e3c573e3f00d8!2z44Kz44Oh44OA54-I55CyIOmHjuS4puW6lw!5e0!3m2!1sja!2sjp!4v1592795030975!5m2!1sja!2sjp">Google</a>
+  </div>
+
+  = code('html') do
+    |
+      <div class="html-code">
+        <a class="popup-youtube" href="https://www.youtube.com/watch?v=OAo1GBrdvzg">
+          YouTube
+        </a>
+        <a class="popup-vimeo" href="https://vimeo.com/354152854">
+          Vimeo
+        </a>
+        <a class="popup-gmaps" href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3264.098229592375!2d136.94909095223227!3d35.10425798023631!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60037b0d5843e2af%3A0x282e3c573e3f00d8!2z44Kz44Oh44OA54-I55CyIOmHjuS4puW6lw!5e0!3m2!1sja!2sjp!4v1592795030975!5m2!1sja!2sjp">
+          Google
+        </a>
+      </div>
+
+.submenu
+  = partial 'appendix', locals: { hidden_item: 4 }

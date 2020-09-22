@@ -180,10 +180,14 @@ nav {
 
 /* 記事一覧 */
 section {
-  grid-row: recent;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px 10px; }
+  section:not(.appendix) {
+    grid-row: recent; }
+  section.appendix {
+    grid-row: appendix;
+    margin-top: 20px; }
   section h2 {
     grid-column: 1 / -1;
     font-family: 'Dancing Script', cursive;
@@ -200,7 +204,8 @@ section {
     section a:hover {
       text-decoration: underline; }
     section a h3 {
-      font-size: 14px; }
+      font-size: 14px;
+      text-align: center; }
 
 /* デスクトップ版 */
 @media (min-width: 768px) {
@@ -242,7 +247,7 @@ table {
   .subtitle a {
     color: #fef4f4;
     text-decoration: none;
-    border: solid 1px #fef4f4;
+    border: solid 2px #fef4f4;
     padding: 10px 40px;
     display: inline-block;
     margin-top: 10px;

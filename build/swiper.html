@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Swiper - WAVE</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" />
+    <link href="stylesheets/style.css" rel="stylesheet" /><link href="images/favicon.png" rel="icon" type="image/png" />
+  </head>
+  <body class="site">
+    <header>
+      <a href="index.html">WAVE</a>
+    </header><nav>
+      <ul>
+        <li>
+          <a href="/">トップ</a>
+        </li>
+        <li>
+          <a href="/about.html">サイトについて</a>
+        </li>
+        <li>
+          <a href="/contact.html">お問い合わせ</a>
+        </li>
+      </ul>
+    </nav><style type="text/css">
+  .swiper-container.fade {
+    width: 800px;
+    height: auto;
+  }
+  
+  .swiper-container.fade .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-container.fade .swiper-slide img {
+    width: 600px;
+    height: auto;
+  }
+</style>
+<article>
+  <h1>
+    写真を見せる(swiper)
+  </h1>
+  <figure>
+    <img src="images/swiper.jpg" alt="Swiper" />
+  </figure>
+  <p>
+    こちらはカルーセル（回転木馬）と呼ばれる形式での写真表示です。<br />Swiper や Slick が有名です。<br />公式サイトはこちらです。<br /><a href="https://swiperjs.com/demos/">使用例</a><br /><a href="https://swiperjs.com/get-started/">使い方</a>
+  </p>
+  <h2>Swiperの使用例</h2><link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"><!-- Slider main container --><div class="swiper-container fade"><!-- Additional required wrapper --><div class="swiper-wrapper"><!-- Slides --><div class="swiper-slide"><img src="images/photo/tora.jpg"></div><div class="swiper-slide"><img src="images/photo/tsuru.jpg"></div><div class="swiper-slide"><img src="images/photo/zou.jpg"></div></div><!-- If we need pagination --><div class="swiper-pagination fade-pagination"></div><!-- If we need navigation buttons & add arrows--><div class="swiper-button-prev fade-button-prev"></div><div class="swiper-button-next fade-button-next"></div></div><div class="highlight"><pre class="highlight html"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+  <span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;title&gt;</span>Swiper Demo<span class="nt">&lt;/title&gt;</span>
+  <span class="c">&lt;!-- Link Swiper's CSS --&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://unpkg.com/swiper/swiper-bundle.min.css"</span><span class="nt">&gt;</span>
+  <span class="c">&lt;!-- Carouselのサイズを設定 --&gt;</span>
+  <span class="nt">&lt;style&gt;</span>
+    <span class="nc">.swiper-container</span> <span class="p">{</span>
+      <span class="nl">width</span><span class="p">:</span> <span class="m">800px</span><span class="p">;</span>
+      <span class="nl">height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nc">.swiper-slide</span> <span class="p">{</span>
+      <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+      <span class="nl">justify-content</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+      <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nt">img</span> <span class="p">{</span>
+      <span class="nl">width</span><span class="p">:</span> <span class="m">600px</span><span class="p">;</span>
+      <span class="nl">height</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="nt">&lt;/style&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  
+  <span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;h1&gt;</span>Swiperの使用例<span class="nt">&lt;/h1&gt;</span>
+  <span class="c">&lt;!-- Slider main container --&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"swiper-container"</span><span class="nt">&gt;</span>
+    <span class="c">&lt;!-- Additional required wrapper --&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"swiper-wrapper"</span><span class="nt">&gt;</span>
+      <span class="c">&lt;!-- Slides --&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"swiper-slide"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"images/tora.jpg"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"swiper-slide"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"images/tsuru.jpg"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"swiper-slide"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"images/zou.jpg"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="c">&lt;!-- If we need pagination --&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"swiper-pagination fade-pagination"</span><span class="nt">&gt;&lt;/div&gt;</span>
+  
+    <span class="c">&lt;!-- If we need navigation buttons &amp; add arrows--&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"swiper-button-prev fade-button-prev"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"swiper-button-next fade-button-next"</span><span class="nt">&gt;&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  
+  <span class="c">&lt;!-- Swiper JS --&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://unpkg.com/swiper/swiper-bundle.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;script&gt;</span>
+    <span class="kd">let</span> <span class="nx">fade</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Swiper</span><span class="p">(</span><span class="dl">'</span><span class="s1">.swiper-container</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+      <span class="na">loop</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>     <span class="c1">// 環状化あり</span>
+      <span class="na">effect</span><span class="p">:</span> <span class="dl">'</span><span class="s1">fade</span><span class="dl">'</span><span class="p">,</span> <span class="c1">// スライド切替効果</span>
+      <span class="na">autoplay</span><span class="p">:</span> <span class="p">{</span>     <span class="c1">// 自動再生</span>
+        <span class="na">delay</span><span class="p">:</span> <span class="mi">3000</span><span class="p">,</span>  <span class="c1">// 3000msで次のスライドに</span>
+                      <span class="c1">// 利用者の操作により自動再生を停止可</span>
+        <span class="na">disableOnInteraction</span><span class="p">:</span> <span class="kc">true</span>
+      <span class="p">},</span>
+      <span class="na">pagination</span><span class="p">:</span> <span class="p">{</span>   <span class="c1">// 頁付</span>
+        <span class="na">el</span><span class="p">:</span> <span class="dl">'</span><span class="s1">.fade-pagination</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">clickable</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="p">},</span>
+      <span class="na">navigation</span><span class="p">:</span> <span class="p">{</span>   <span class="c1">// 左右の＜＞</span>
+        <span class="na">prevEl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">.fade-button-prev</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">nextEl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">.fade-button-next</span><span class="dl">'</span><span class="p">,</span>
+      <span class="p">},</span>
+    <span class="p">});</span>
+  <span class="nt">&lt;/script&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+  <span class="nt">&lt;/html&gt;</span></code></pre></div><p>CSS と JavaScriptの読み込みに、CDNを利用しています。</p>
+  <backquote cite="https://www.nic.ad.jp/ja/basics/terms/cdn.html">
+    CDN(Content Delivery Network)とは、同一のコンテンツを、 多くの配布先、例えば多くのユーザーの端末に効率的に配布するために使われる仕組みです。
+    手法としては、 まず配布先に近いネットワーク(カスタマーエッジと呼ばれます)に、コンテンツを配布するサーバ(ここではエッジサーバと呼びます)を接続します。 次にあらかじめエッジサーバに、配布するコンテンツのコピーを置いておきます。 最後に、ユーザーがコンテンツにアクセスする時には、ネットワーク的に最も近いエッジサーバに誘導します。
+    ユーザーの視点では、レスポンスが早く、そしてダウンロードが速くなります。 コンテンツ提供者の視点では、オリジナルファイルを置いているサーバ(オリジンサーバと呼ばれます)へのトラフィック集中が避けられる、 サービスの耐障害性を高められる、といったメリットがあります。
+    具体的にはソフトウェアのバージョンアップに伴うファイルの配布、 動画の配信などに使われています。
+  </backquote>
+  
+  <p>また、&lt;style&gt;タグ、&lt;script&gt;タグを使って、cssや、javascriptを書くこともできます。
+  サンプルファイルの記述に便利です。
+  javascriptは、bodyの最後に書くと速度面等で有利と言われています。</p>
+  <br />
+  <hr />
+  <br />
+  <h3>
+    サムネイル(小さな画像)をつける例
+  </h3>
+  <figcaption>index.html</figcaption><div class="highlight"><pre class="highlight html"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+  <span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;title&gt;</span>Swiper demo<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1"</span><span class="nt">&gt;</span>
+  
+  <span class="c">&lt;!-- Link Swiper's CSS --&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://unpkg.com/swiper/swiper-bundle.min.css"</span><span class="nt">&gt;</span>
+  
+  <span class="c">&lt;!-- Demo styles --&gt;</span>
+  <span class="nt">&lt;style&gt;</span>
+    <span class="nt">html</span><span class="o">,</span>
+    <span class="nt">body</span> <span class="p">{</span>
+      <span class="nl">height</span><span class="p">:</span> <span class="m">70%</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nc">.swiper-container</span> <span class="p">{</span>
+      <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+      <span class="nl">height</span><span class="p">:</span> <span class="m">300px</span><span class="p">;</span>
+      <span class="nl">margin-left</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+      <span class="nl">margin-right</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nc">.swiper-slide</span> <span class="p">{</span>
+      <span class="nl">background-size</span><span class="p">:</span> <span class="n">cover</span><span class="p">;</span>
+      <span class="nl">background-position</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nc">.gallery-top</span> <span class="p">{</span>
+      <span class="nl">height</span><span class="p">:</span> <span class="m">80%</span><span class="p">;</span>
+      <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nc">.gallery-thumbs</span> <span class="p">{</span>
+      <span class="nl">height</span><span class="p">:</span> <span class="m">20%</span><span class="p">;</span>
+      <span class="nl">box-sizing</span><span class="p">:</span> <span class="n">border-box</span><span class="p">;</span>
+      <span class="nl">padding</span><span class="p">:</span> <span class="m">10px</span> <span class="m">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nc">.gallery-thumbs</span> <span class="nc">.swiper-slide</span> <span class="p">{</span>
+      <span class="nl">height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+      <span class="nl">opacity</span><span class="p">:</span> <span class="m">0.4</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nc">.gallery-thumbs</span> <span class="nc">.swiper-slide-thumb-active</span> <span class="p">{</span>
+      <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="nt">&lt;/style&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  
+  <span class="nt">&lt;body&gt;</span>
+  <span class="c">&lt;!-- Swiper --&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"swiper-container gallery-top"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"swiper-wrapper"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"swiper-slide"</span> <span class="na">style=</span><span class="s">"background-image:url(images/tora.jpg)"</span><span class="nt">&gt;&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"swiper-slide"</span> <span class="na">style=</span><span class="s">"background-image:url(images/tsuru.jpg)"</span><span class="nt">&gt;&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"swiper-slide"</span> <span class="na">style=</span><span class="s">"background-image:url(images/zou.jpg)"</span><span class="nt">&gt;&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"swiper-slide"</span> <span class="na">style=</span><span class="s">"background-image:url(images/saru.jpg)"</span><span class="nt">&gt;&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"swiper-slide"</span> <span class="na">style=</span><span class="s">"background-image:url(images/hakucho.jpg)"</span><span class="nt">&gt;&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"swiper-slide"</span> <span class="na">style=</span><span class="s">"background-image:url(images/araiguma.jpg)"</span><span class="nt">&gt;&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"swiper-slide"</span> <span class="na">style=</span><span class="s">"background-image:url(images/kuma.jpg)"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="c">&lt;!-- Add Arrows --&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"swiper-button-next swiper-button-white"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"swiper-button-prev swiper-button-white"</span><span class="nt">&gt;&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"swiper-container gallery-thumbs"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"swiper-wrapper"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"swiper-slide"</span> <span class="na">style=</span><span class="s">"background-image:url(images/tora.jpg)"</span><span class="nt">&gt;&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"swiper-slide"</span> <span class="na">style=</span><span class="s">"background-image:url(images/tsuru.jpg)"</span><span class="nt">&gt;&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"swiper-slide"</span> <span class="na">style=</span><span class="s">"background-image:url(images/zou.jpg)"</span><span class="nt">&gt;&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"swiper-slide"</span> <span class="na">style=</span><span class="s">"background-image:url(images/saru.jpg)"</span><span class="nt">&gt;&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"swiper-slide"</span> <span class="na">style=</span><span class="s">"background-image:url(images/hakucho.jpg)"</span><span class="nt">&gt;&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"swiper-slide"</span> <span class="na">style=</span><span class="s">"background-image:url(images/araiguma.jpg)"</span><span class="nt">&gt;&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"swiper-slide"</span> <span class="na">style=</span><span class="s">"background-image:url(images/kuma.jpg)"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  
+  <span class="c">&lt;!-- Swiper JS --&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://unpkg.com/swiper/swiper-bundle.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  
+  <span class="c">&lt;!-- Initialize Swiper --&gt;</span>
+  <span class="nt">&lt;script&gt;</span>
+    <span class="kd">let</span> <span class="nx">galleryThumbs</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Swiper</span><span class="p">(</span><span class="dl">'</span><span class="s1">.gallery-thumbs</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+      <span class="na">spaceBetween</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="na">slidesPerView</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+      <span class="na">loop</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="na">freeMode</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="na">loopedSlides</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="c1">//looped slides should be the same</span>
+      <span class="na">watchSlidesVisibility</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="na">watchSlidesProgress</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="p">});</span>
+  
+    <span class="kd">let</span> <span class="nx">galleryTop</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Swiper</span><span class="p">(</span><span class="dl">'</span><span class="s1">.gallery-top</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+      <span class="na">spaceBetween</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="na">loop</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="na">loopedSlides</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="c1">//looped slides should be the same</span>
+      <span class="na">navigation</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">nextEl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">.swiper-button-next</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">prevEl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">.swiper-button-prev</span><span class="dl">'</span><span class="p">,</span>
+      <span class="p">},</span>
+      <span class="na">thumbs</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">swiper</span><span class="p">:</span> <span class="nx">galleryThumbs</span><span class="p">,</span>
+      <span class="p">},</span>
+    <span class="p">});</span>
+  <span class="nt">&lt;/script&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+  <span class="nt">&lt;/html&gt;</span></code></pre></div>
+</article>
+<div class="submenu">
+  <aside>
+    <h2>
+      APPENDIX
+    </h2>
+    <ul>
+      <li>
+        <a href="google_map.html">
+          <figure>
+            <img src="images/google_map.jpg" alt="" />
+          </figure>
+        </a>
+      </li>
+      <li>
+        <a href="youtube.html">
+          <figure>
+            <img src="images/youtube.jpg" alt="" />
+          </figure>
+        </a>
+      </li>
+      <li>
+        <a href="vimeo.html">
+          <figure>
+            <img src="images/vimeo.jpg" alt="" />
+          </figure>
+        </a>
+      </li>
+      <li>
+        <a href="magnific_popup.html">
+          <figure>
+            <img src="images/magnific_popup.jpg" alt="" />
+          </figure>
+        </a>
+      </li>
+      <li class="hidden">
+        <a href="swiper.html">
+          <figure>
+            <img src="images/swiper.jpg" alt="" />
+          </figure>
+        </a>
+      </li>
+    </ul>
+  </aside>
+</div>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+  let fade = new Swiper('.swiper-container.fade', {
+    loop: true,     // 環状化あり
+    effect: 'fade', // スライド切替効果
+    autoplay: {     // 自動再生
+      delay: 3000,  // 3000msで次のスライドに
+                    // 利用者の操作により自動再生を停止可
+      disableOnInteraction: true
+    },
+    pagination: {   // 頁付
+      el: '.fade-pagination',
+      clickable: true,
+    },
+    navigation: {   // 左右の＜＞
+      prevEl: '.fade-button-prev',
+      nextEl: '.fade-button-next',
+    },
+  });
+</script><footer>
+      <p>
+        Copyright 令和元年 ©️ WAVE 
+      </p>
+    </footer>
+  </body>
+</html>

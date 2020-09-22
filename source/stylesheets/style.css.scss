@@ -12,3 +12,9 @@
 
 // object
 @import "object/object";
+
+@import "highlighting";
+
+.highlight pre code span {
+  overflow-wrap: break-word;
+}

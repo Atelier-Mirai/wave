@@ -1,0 +1,102 @@
+---
+title: Vimeo - WAVE
+---
+
+article
+  h1 動画を埋め込む(Vimeo)
+
+  figure
+    = image_tag "vimeo.jpg", alt: "Vimeo"
+
+  p
+    | YouTube は、玉石混交で低品質の動画を中心に投稿されています。
+    br
+    | これに対し、
+    => link_to 'Vimeo', 'https://vimeo.com'
+    | は、高画質で芸術的な作品が多く掲載されていることで有名です。
+    br
+    | ウィンドサーフィンの大会として有名な伊勢湾カップの競技風景の動画を埋め込んでみました。
+
+  <h1>Vimeoの埋め込み例</h1>
+  <div style="padding:56.25% 0 0 0;position:relative;">
+    <iframe src="https://player.vimeo.com/video/354152854?title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+  </div>
+
+
+  figcaption index.html
+  = code('html') do
+    |
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+      </head>
+      <body>
+        <h1>Vimeo動画</h1>
+        <div style="padding:56.25% 0 0 0;position:relative;">
+          <iframe src="https://player.vimeo.com/video/354152854?title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        </div>
+      </body>
+      </html>
+
+  markdown:
+    埋め込み方法について、公式サイトには次のように記されています。
+
+    <blockquote cite="https://vimeo.zendesk.com/hc/ja/articles/224969968-動画の埋め込みについて" style="margin-left: 1rem;">
+      <a href="https://vimeo.zendesk.com/hc/ja/articles/224969968-動画の埋め込みについて">https://vimeo.zendesk.com/hc/ja/articles/224969968-動画の埋め込みについて</a>
+      <br>
+      動画の埋め込みコードを取得するには、
+      <br>
+      その動画ページに移動し「共有」ボタンをクリックしてください。
+      <br>
+      埋め込みコード欄の上に表示される「+オプション表示」のリンクをクリックし、
+      <br>
+      基本のカスタムオプションで埋め込み動画のプレビューを表示します。
+      <br>
+      調整が終わったら、埋め込みコードをコピーし 動画 を埋め込みたい場所に貼り付けます。
+    </blockquote>
+
+    順に説明していきます。
+
+    1. その動画ページに移動し「共有」ボタンをクリックしてください。
+      今回は、知多市で行われている伊勢湾カップの動画を掲載してみましょう。
+      [https://vimeo.com/354152854](https://vimeo.com/354152854)
+      に移動して、「共有」ボタンをクリックします。
+      ![伊勢湾](video/vimeo1.jpg)
+
+    1. 埋め込みコード欄の上に表示される「+オプション表示」のリンクをクリックし、
+      ![伊勢湾](video/vimeo2.jpg)
+
+    1. 基本のカスタムオプションで埋め込み動画のプレビューを表示します。
+      ![伊勢湾](video/vimeo3.jpg)
+
+    1. いろいろな調整を行います。
+
+      * サイズを、Responsive にします。
+      * イントロの、プロフィール画像、タイトル、投稿者のチェックを外します。
+      * スペシャルアイテムで、動画の下に説明を表示のチェックを外します。
+
+      ![伊勢湾](video/vimeo4.jpg)
+
+    1. 調整が終わったら、埋め込みコードをコピーし、埋め込み欄をクリックします。
+    <br>
+    ```Command + C``` で、コードをコピーして、
+    ```Command + V``` で、コードを貼り付けます。
+      ![伊勢湾](video/vimeo5.jpg)
+
+    これで、完成です。
+    YouTubeではレスポンシブ対応するために、
+    <br>
+    ```<div class="video"><div class="inner">```や、
+    <br>
+    ```style.css```が必要でしたが、今回は不要です。
+    <br>
+    ```<script src="https://player.vimeo.com/api/player.js"></script>```
+    <br>
+    は、JavaScriptを使っていろいろ制御したいときには必要ですが、
+    <br>
+    今回は簡素に動画を掲載するだけですので、削除してよいでしょう。
+
+.submenu
+  = partial 'appendix', locals: { hidden_item: 3 }

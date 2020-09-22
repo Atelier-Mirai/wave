@@ -1,0 +1,198 @@
+---
+title: Swiper - WAVE
+---
+
+css:
+  html,
+  body {
+    height: auto;
+  }
+
+  .swiper-container {
+    width: 100%;
+    max-width: 800px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .swiper-slide {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .gallery-top {
+    height: 80%;
+    width: 100%;
+  }
+
+  .gallery-thumbs {
+    height: 20%;
+    box-sizing: border-box;
+    padding: 10px 0;
+  }
+
+  .gallery-thumbs .swiper-slide {
+    height: 100%;
+    opacity: 0.4;
+  }
+
+  .gallery-thumbs .swiper-slide-thumb-active {
+    opacity: 1;
+  }
+
+article
+  h1 写真を見せる(swiper)
+
+  figure
+    = image_tag "swiper.jpg", alt: "Swiper"
+
+  p
+    | カルーセル（回転木馬）と呼ばれる形式での写真表示です。
+    br
+    | サムネイル（小さな画像）を一緒に表示させることもできます。
+    br
+    | 公式サイトはこちらです。
+    br
+    = link_to "使用例", "https://swiperjs.com/demos/"
+    br
+    = link_to "使い方", "https://swiperjs.com/get-started/"
+
+    <div class="swiper-slidae" style="background-image:url(images/photo/tora.jpg); height: 100px; width: 100px;"></div>
+
+  <h2>Swiperの使用例(サムネイル付き)</h2>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+  <div class="swiper-container gallery-top">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" style="background-image:url(images/photo/tora.jpg)"></div>
+      <div class="swiper-slide" style="background-image:url(images/photo/tsuru.jpg)"></div>
+      <div class="swiper-slide" style="background-image:url(images/photo/zou.jpg)"></div>
+      <div class="swiper-slide" style="background-image:url(images/photo/saru.jpg)"></div>
+      <div class="swiper-slide" style="background-image:url(images/photo/hakucho.jpg)"></div>
+      <div class="swiper-slide" style="background-image:url(images/photo/araiguma.jpg)"></div>
+      <div class="swiper-slide" style="background-image:url(images/photo/kuma.jpg)"></div>
+    </div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next swiper-button-white"></div>
+    <div class="swiper-button-prev swiper-button-white"></div>
+  </div>
+  <div class="swiper-container gallery-thumbs">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" style="background-image:url(images/photo/tora.jpg)"></div>
+      <div class="swiper-slide" style="background-image:url(images/photo/tsuru.jpg)"></div>
+      <div class="swiper-slide" style="background-image:url(images/photo/zou.jpg)"></div>
+      <div class="swiper-slide" style="background-image:url(images/photo/saru.jpg)"></div>
+      <div class="swiper-slide" style="background-image:url(images/photo/hakucho.jpg)"></div>
+      <div class="swiper-slide" style="background-image:url(images/photo/araiguma.jpg)"></div>
+      <div class="swiper-slide" style="background-image:url(images/photo/kuma.jpg)"></div>
+    </div>
+  </div>
+
+  = code('html') do
+    |
+      <!DOCTYPE html>
+      <html>
+      <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Swiper Demo</title>
+      <!-- Link Swiper's CSS -->
+      <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+      <!-- Carouselのサイズを設定 -->
+      <style>
+        .swiper-container {
+          width: 800px;
+          height: 100%;
+        }
+        .swiper-slide {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        img {
+          width: 600px;
+          height: auto;
+        }
+      </style>
+      </head>
+
+      <body>
+      <h1>Swiperの使用例</h1>
+      <!-- Slider main container -->
+      <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <img src="images/tora.jpg">
+          </div>
+          <div class="swiper-slide">
+            <img src="images/tsuru.jpg">
+          </div>
+          <div class="swiper-slide">
+            <img src="images/zou.jpg">
+          </div>
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination fade-pagination"></div>
+
+        <!-- If we need navigation buttons & add arrows-->
+        <div class="swiper-button-prev fade-button-prev"></div>
+        <div class="swiper-button-next fade-button-next"></div>
+      </div>
+
+      <!-- Swiper JS -->
+      <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+      <script>
+        let fade = new Swiper('.swiper-container', {
+          loop: true,     // 環状化あり
+          effect: 'fade', // スライド切替効果
+          autoplay: {     // 自動再生
+            delay: 3000,  // 3000msで次のスライドに
+                          // 利用者の操作により自動再生を停止可
+            disableOnInteraction: true
+          },
+          pagination: {   // 頁付
+            el: '.fade-pagination',
+            clickable: true,
+          },
+          navigation: {   // 左右の＜＞
+            prevEl: '.fade-button-prev',
+            nextEl: '.fade-button-next',
+          },
+        });
+      </script>
+      </body>
+      </html>
+
+  markdown:
+    [カルーセルの例](swiper.html)
+
+.submenu
+  = partial 'appendix', locals: { hidden_item: 5 }
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+javascript:
+  let galleryThumbs = new Swiper('.gallery-thumbs', {
+    spaceBetween: 10,
+    slidesPerView: 4,
+    loop: true,
+    freeMode: true,
+    loopedSlides: 5, //looped slides should be the same
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+  });
+
+  let galleryTop = new Swiper('.gallery-top', {
+    spaceBetween: 10,
+    loop: true,
+    loopedSlides: 5, //looped slides should be the same
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    thumbs: {
+      swiper: galleryThumbs,
+    },
+  });

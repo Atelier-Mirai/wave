@@ -1,0 +1,201 @@
+<h1 id="section">動画 の埋め込み</h1>
+
+<p>Webサイトに動画を掲載するにはどのようにしたら良いでしょうか？
+動画共用サイトとして有名なところでは、YouTubeやVimeoがあります。</p>
+
+<h2 id="youtube-">YouTube を埋め込む</h2>
+
+<p>こちらが YouTubeを埋め込んだ例です。
+<img src="/images/images/youtube0.jpg" alt="猫" /></p>
+
+<p>YouTubeの公式サイトには、埋め込み方法として次のように書かれています。</p>
+
+<h3 id="section-1">動画と再生リストを埋め込む</h3>
+<p>ウェブサイトやブログに YouTube の動画や再生リストを埋め込んで追加できます。
+* パソコンで、埋め込みたい YouTube 動画に移動します。
+* 動画の下にある [共有] 共有 をクリックします。
+* [埋め込む] をクリックします。
+* ボックスに表示されている HTML コードをコピーします。
+* ブログやウェブサイトの HTML にコードを貼り付けます。
+<br />
+<a href="https://support.google.com/youtube/answer/171780?hl=ja">https://support.google.com/youtube/answer/171780?hl=ja</a></p>
+
+<p>順に説明していきます。</p>
+
+<h2 id="section-2">準備</h2>
+<p><code>index.html</code> と <code>style.css</code> を次のように用意します。</p>
+
+<h6 id="indexhtml">index.html</h6>
+<p>```html
+&lt;!DOCTYPE html&gt;</p>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>案内地図</h1>
+  <div class="video">
+    <div class="inner">
+      <iframe src="https://www.youtube.com/embed/
+             OAo1GBrdvzg
+             ?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen="">
+      </iframe>
+    </div>
+  </div>
+</body>
+</html>
+<p>```</p>
+
+<h6 id="stylecss">style.css</h6>
+<p>```css
+.video {
+  box-sizing: border-box;
+  width: 100%;
+}</p>
+
+<p>.video .inner {
+  overflow: hidden;
+  position: relative;
+  padding-top: calc(100% * 9 / 16);
+}</p>
+
+<p>.video .inner iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+```</p>
+
+<h2 id="youtube">YouTube埋め込み方法</h2>
+<p>ここでは可愛い猫の動画がありますので、それを埋め込むことにしましょう。</p>
+
+<ol>
+  <li>
+    <p>埋め込みたい YouTube 動画に移動します。</p>
+  </li>
+  <li>
+    <p>動画の下にある 「共有」をクリックします。
+  <img src="/images/images/youtube1.jpg" alt="猫1" /></p>
+  </li>
+  <li>
+    <p>「埋め込む」 をクリックします。
+  <img src="/images/images/youtube2.jpg" alt="猫2" /></p>
+  </li>
+  <li>
+    <p>ボックスに表示されている HTML コードをコピーします。
+  <img src="/images/images/youtube3.jpg" alt="猫3" /></p>
+  </li>
+  <li>
+    <p>ブログやウェブサイトの HTML にコードを貼り付けます。
+```html</p>
+  </li>
+</ol>
+<iframe width="560" height="315" src="https://www.youtube.com/
+               embed/OAo1GBrdvzg" frameborder="0" allow="accelerometer;
+                 autoplay;
+                 encrypted-media;
+                 gyroscope;
+                 picture-in-picture" allowfullscreen="">
+  </iframe>
+<p>```</p>
+
+<ol start="6"><li>不要な部分もあるので、必要な部分だけを残します。</li></ol>
+<p>##### 必要な部分だけを残したHTML
+  ```html</p>
+<iframe src="https://www.youtube.com/
+               embed/OAo1GBrdvzg
+               ?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen="">
+  </iframe>
+<p>```</p>
+
+<p><code>allow="accelerometer;(略)</code> を削除しています。
+<code>?rel=0&amp;showinfo=0"</code>と付けることで、
+* 動画再生した後に関連動画が表示されなくなります。
+* 動画再生中の表題が非表示になり、すっきりします</p>
+
+<h3 id="section-3">参考</h3>
+<p>YouTube 埋め込みプレーヤーとプレーヤーのパラメータ
+<br />
+https://developers.google.com/youtube/player_parameters?hl=ja#Manual_IFrame_Embeds</p>
+
+<h2 id="vimeo">Vimeoの埋め込み</h2>
+<p>動画共用サイトとして Vimeo も有名です。
+高画質で芸術的な作品が多く載せられています。</p>
+
+<p>埋め込んだ例はこのような感じになります。
+  <img src="/images/images/vimeo0.jpg" alt="伊勢湾1" /></p>
+
+<p>埋め込み方法について、公式サイトには次のように記されています。
+&gt; https://vimeo.zendesk.com/hc/ja/articles/224969968-動画の埋め込みについて
+<br />
+&gt; 動画の埋め込みコードを取得するには、
+&gt; その動画ページに移動し「共有」ボタンをクリックしてください。
+&gt; 埋め込みコード欄の上に表示される「+オプション表示」のリンクをクリックし、
+&gt; 基本のカスタムオプションで埋め込み動画のプレビューを表示します。
+&gt; 調整が終わったら、埋め込みコードをコピーし 動画 を埋め込みたい場所に貼り付けます。</p>
+
+<p>順に説明していきます。</p>
+
+<ol>
+  <li>
+    <p>その動画ページに移動し「共有」ボタンをクリックしてください。
+  今回は、知多市で行われている伊勢湾カップの動画を掲載してみましょう。
+  https://vimeo.com/354152854
+  に移動して、「共有」ボタンをクリックします。
+  <img src="/images/images/vimeo1.jpg" alt="伊勢湾" /></p>
+  </li>
+  <li>埋め込みコード欄の上に表示される「+オプション表示」のリンクをクリックし、
+  <img src="/images/images/vimeo2.jpg" alt="伊勢湾" /></li>
+  <li>基本のカスタムオプションで埋め込み動画のプレビューを表示します。
+  <img src="/images/images/vimeo3.jpg" alt="伊勢湾" /></li>
+  <li>
+    <p>いろいろな調整を行います。
+  * サイズを、Responsive にします。
+  * イントロの、プロフィール画像、タイトル、投稿者のチェックを外します。
+  * スペシャルアイテムで、動画の下に説明を表示のチェックを外します。
+  <img src="/images/images/vimeo4.jpg" alt="伊勢湾" /></p>
+  </li>
+  <li>
+    <p>調整が終わったら、埋め込みコードをコピーし
+埋め込み欄をクリックします。
+<br />
+<code>Command + C</code> で、コードをコピーします。
+  <img src="/images/images/vimeo5.jpg" alt="伊勢湾" /></p>
+  </li>
+  <li>動画 を埋め込みたい場所に貼り付けます。
+```html
+  &lt;!DOCTYPE html&gt;</li>
+</ol>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+  </head>
+  <body>
+    <h1>Vimeo動画</h1>
+    <div style="padding:56.25% 0 0 0;position:relative;">
+      <iframe src="https://player.vimeo.com/video/
+                   354152854?title=0&amp;byline=0&amp;portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="">
+      </iframe>
+    </div>
+    <script src="https://player.vimeo.com/api/player.js"></script>
+  </body>
+  </html>
+<p>```</p>
+
+<p>これで、完成です。
+YouTubeではレスポンシブ対応するために、
+<br />
+<code>&lt;div class="video"&gt;&lt;div class="inner"&gt;</code>や、
+<br />
+<code>style.css</code>が必要でしたが、今回は不要です。
+<br />
+<code>&lt;script src="https://player.vimeo.com/api/player.js"&gt;&lt;/script&gt;</code>
+<br />
+は、JavaScriptを使っていろいろ制御したいときには必要ですが、
+<br />
+簡素に動画を掲載するだけですので、削除してもよいでしょう。</p>

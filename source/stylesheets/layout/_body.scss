@@ -21,6 +21,7 @@ body.top {
     [title] auto
     [sub] auto
     [recent] auto
+    [appendix] auto
     [foot] 100px;
 }
 
@@ -41,6 +42,7 @@ body.site {
       [head] 100px
       [title sub] auto
       [recent] auto
+      [appendix] auto
       [foot] 100px;
     column-gap: 5%;
   }

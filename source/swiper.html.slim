@@ -1,0 +1,288 @@
+---
+title: Swiper - WAVE
+---
+
+scss:
+  .swiper-container.fade {
+    width: 800px;
+    height: auto;
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 600px;
+        height: auto;
+      }
+    }
+  }
+
+article
+  h1 写真を見せる(swiper)
+
+  figure
+    = image_tag "swiper.jpg", alt: "Swiper"
+
+  p
+    | こちらはカルーセル（回転木馬）と呼ばれる形式での写真表示です。
+    br
+    | Swiper や Slick が有名です。
+    br
+    | 公式サイトはこちらです。
+    br
+    = link_to "使用例", "https://swiperjs.com/demos/"
+    br
+    = link_to "使い方", "https://swiperjs.com/get-started/"
+
+
+  <h2>Swiperの使用例</h2>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+  <!-- Slider main container -->
+  <div class="swiper-container fade">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide">
+        <img src="images/photo/tora.jpg">
+      </div>
+      <div class="swiper-slide">
+        <img src="images/photo/tsuru.jpg">
+      </div>
+      <div class="swiper-slide">
+        <img src="images/photo/zou.jpg">
+      </div>
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination fade-pagination"></div>
+
+    <!-- If we need navigation buttons & add arrows-->
+    <div class="swiper-button-prev fade-button-prev"></div>
+    <div class="swiper-button-next fade-button-next"></div>
+  </div>
+
+
+  = code('html') do
+    |
+      <!DOCTYPE html>
+      <html>
+      <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Swiper Demo</title>
+      <!-- Link Swiper's CSS -->
+      <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+      <!-- Carouselのサイズを設定 -->
+      <style>
+        .swiper-container {
+          width: 800px;
+          height: 100%;
+        }
+        .swiper-slide {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        img {
+          width: 600px;
+          height: auto;
+        }
+      </style>
+      </head>
+
+      <body>
+      <h1>Swiperの使用例</h1>
+      <!-- Slider main container -->
+      <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <img src="images/tora.jpg">
+          </div>
+          <div class="swiper-slide">
+            <img src="images/tsuru.jpg">
+          </div>
+          <div class="swiper-slide">
+            <img src="images/zou.jpg">
+          </div>
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination fade-pagination"></div>
+
+        <!-- If we need navigation buttons & add arrows-->
+        <div class="swiper-button-prev fade-button-prev"></div>
+        <div class="swiper-button-next fade-button-next"></div>
+      </div>
+
+      <!-- Swiper JS -->
+      <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+      <script>
+        let fade = new Swiper('.swiper-container', {
+          loop: true,     // 環状化あり
+          effect: 'fade', // スライド切替効果
+          autoplay: {     // 自動再生
+            delay: 3000,  // 3000msで次のスライドに
+                          // 利用者の操作により自動再生を停止可
+            disableOnInteraction: true
+          },
+          pagination: {   // 頁付
+            el: '.fade-pagination',
+            clickable: true,
+          },
+          navigation: {   // 左右の＜＞
+            prevEl: '.fade-button-prev',
+            nextEl: '.fade-button-next',
+          },
+        });
+      </script>
+      </body>
+      </html>
+
+  markdown:
+    CSS と JavaScriptの読み込みに、CDNを利用しています。
+    <backquote cite="https://www.nic.ad.jp/ja/basics/terms/cdn.html">
+      CDN(Content Delivery Network)とは、同一のコンテンツを、 多くの配布先、例えば多くのユーザーの端末に効率的に配布するために使われる仕組みです。
+      手法としては、 まず配布先に近いネットワーク(カスタマーエッジと呼ばれます)に、コンテンツを配布するサーバ(ここではエッジサーバと呼びます)を接続します。 次にあらかじめエッジサーバに、配布するコンテンツのコピーを置いておきます。 最後に、ユーザーがコンテンツにアクセスする時には、ネットワーク的に最も近いエッジサーバに誘導します。
+      ユーザーの視点では、レスポンスが早く、そしてダウンロードが速くなります。 コンテンツ提供者の視点では、オリジナルファイルを置いているサーバ(オリジンサーバと呼ばれます)へのトラフィック集中が避けられる、 サービスの耐障害性を高められる、といったメリットがあります。
+      具体的にはソフトウェアのバージョンアップに伴うファイルの配布、 動画の配信などに使われています。
+    </backquote>
+
+    また、&lt;style&gt;タグ、&lt;script&gt;タグを使って、cssや、javascriptを書くこともできます。
+    サンプルファイルの記述に便利です。
+    javascriptは、bodyの最後に書くと速度面等で有利と言われています。
+
+  br
+  hr
+  br
+  h3 サムネイル(小さな画像)をつける例
+  figcaption index.html
+  = code('html') do
+    |
+      <!DOCTYPE html>
+      <html>
+      <head>
+      <meta charset="utf-8">
+      <title>Swiper demo</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Link Swiper's CSS -->
+      <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+      <!-- Demo styles -->
+      <style>
+        html,
+        body {
+          height: 70%;
+        }
+        .swiper-container {
+          width: 100%;
+          height: 300px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .swiper-slide {
+          background-size: cover;
+          background-position: center;
+        }
+        .gallery-top {
+          height: 80%;
+          width: 100%;
+        }
+        .gallery-thumbs {
+          height: 20%;
+          box-sizing: border-box;
+          padding: 10px 0;
+        }
+        .gallery-thumbs .swiper-slide {
+          height: 100%;
+          opacity: 0.4;
+        }
+        .gallery-thumbs .swiper-slide-thumb-active {
+          opacity: 1;
+        }
+      </style>
+      </head>
+
+      <body>
+      <!-- Swiper -->
+      <div class="swiper-container gallery-top">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" style="background-image:url(images/tora.jpg)"></div>
+          <div class="swiper-slide" style="background-image:url(images/tsuru.jpg)"></div>
+          <div class="swiper-slide" style="background-image:url(images/zou.jpg)"></div>
+          <div class="swiper-slide" style="background-image:url(images/saru.jpg)"></div>
+          <div class="swiper-slide" style="background-image:url(images/hakucho.jpg)"></div>
+          <div class="swiper-slide" style="background-image:url(images/araiguma.jpg)"></div>
+          <div class="swiper-slide" style="background-image:url(images/kuma.jpg)"></div>
+        </div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next swiper-button-white"></div>
+        <div class="swiper-button-prev swiper-button-white"></div>
+      </div>
+      <div class="swiper-container gallery-thumbs">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" style="background-image:url(images/tora.jpg)"></div>
+          <div class="swiper-slide" style="background-image:url(images/tsuru.jpg)"></div>
+          <div class="swiper-slide" style="background-image:url(images/zou.jpg)"></div>
+          <div class="swiper-slide" style="background-image:url(images/saru.jpg)"></div>
+          <div class="swiper-slide" style="background-image:url(images/hakucho.jpg)"></div>
+          <div class="swiper-slide" style="background-image:url(images/araiguma.jpg)"></div>
+          <div class="swiper-slide" style="background-image:url(images/kuma.jpg)"></div>
+        </div>
+      </div>
+
+      <!-- Swiper JS -->
+      <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+      <!-- Initialize Swiper -->
+      <script>
+        let galleryThumbs = new Swiper('.gallery-thumbs', {
+          spaceBetween: 10,
+          slidesPerView: 4,
+          loop: true,
+          freeMode: true,
+          loopedSlides: 5, //looped slides should be the same
+          watchSlidesVisibility: true,
+          watchSlidesProgress: true,
+        });
+
+        let galleryTop = new Swiper('.gallery-top', {
+          spaceBetween: 10,
+          loop: true,
+          loopedSlides: 5, //looped slides should be the same
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          thumbs: {
+            swiper: galleryThumbs,
+          },
+        });
+      </script>
+      </body>
+      </html>
+
+
+.submenu
+  = partial 'appendix', locals: { hidden_item: 5 }
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+javascript:
+  let fade = new Swiper('.swiper-container.fade', {
+    loop: true,     // 環状化あり
+    effect: 'fade', // スライド切替効果
+    autoplay: {     // 自動再生
+      delay: 3000,  // 3000msで次のスライドに
+                    // 利用者の操作により自動再生を停止可
+      disableOnInteraction: true
+    },
+    pagination: {   // 頁付
+      el: '.fade-pagination',
+      clickable: true,
+    },
+    navigation: {   // 左右の＜＞
+      prevEl: '.fade-button-prev',
+      nextEl: '.fade-button-next',
+    },
+  });

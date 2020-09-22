@@ -16,7 +16,7 @@ body > * {
 
 /* 列の設定 (トップページ)*/
 body.top {
-  grid-template-rows: [head] 100px [title] auto [sub] auto [recent] auto [foot] 100px; }
+  grid-template-rows: [head] 100px [title] auto [sub] auto [recent] auto [appendix] auto [foot] 100px; }
 
 /* 列の設定 (サイトページ)*/
 body.site {
@@ -26,7 +26,7 @@ body.site {
 @media (min-width: 768px) {
   body.top {
     grid-template-columns: 0.2fr repeat(6, 1fr) 0.2fr;
-    grid-template-rows: [head] 100px [title sub] auto [recent] auto [foot] 100px;
+    grid-template-rows: [head] 100px [title sub] auto [recent] auto [appendix] auto [foot] 100px;
     column-gap: 5%; }
   body.site {
     grid-template-columns: 0.2fr repeat(6, 1fr) 0.2fr;

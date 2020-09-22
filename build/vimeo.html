@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vimeo - WAVE</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" />
+    <link href="stylesheets/style.css" rel="stylesheet" /><link href="images/favicon.png" rel="icon" type="image/png" />
+  </head>
+  <body class="site">
+    <header>
+      <a href="index.html">WAVE</a>
+    </header><nav>
+      <ul>
+        <li>
+          <a href="/">トップ</a>
+        </li>
+        <li>
+          <a href="/about.html">サイトについて</a>
+        </li>
+        <li>
+          <a href="/contact.html">お問い合わせ</a>
+        </li>
+      </ul>
+    </nav><article>
+  <h1>
+    動画を埋め込む(Vimeo)
+  </h1>
+  <figure>
+    <img src="images/vimeo.jpg" alt="Vimeo" />
+  </figure>
+  <p>
+    YouTube は、玉石混交で低品質の動画を中心に投稿されています。<br />これに対し、<a href="https://vimeo.com">Vimeo</a> は、高画質で芸術的な作品が多く掲載されていることで有名です。<br />ウィンドサーフィンの大会として有名な伊勢湾カップの競技風景の動画を埋め込んでみました。
+  </p>
+  <h1>Vimeoの埋め込み例</h1><div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/354152854?title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><figcaption>index.html</figcaption><div class="highlight"><pre class="highlight html"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+  <span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1"</span> <span class="na">name=</span><span class="s">"viewport"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>Vimeo動画<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"padding:56.25% 0 0 0;position:relative;"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;iframe</span> <span class="na">src=</span><span class="s">"https://player.vimeo.com/video/354152854?title=0&amp;byline=0&amp;portrait=0"</span> <span class="na">style=</span><span class="s">"position:absolute;top:0;left:0;width:100%;height:100%;"</span> <span class="na">frameborder=</span><span class="s">"0"</span> <span class="na">allow=</span><span class="s">"autoplay; fullscreen"</span> <span class="na">allowfullscreen</span><span class="nt">&gt;&lt;/iframe&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+  <span class="nt">&lt;/html&gt;</span></code></pre></div><p>埋め込み方法について、公式サイトには次のように記されています。</p>
+
+<blockquote cite="https://vimeo.zendesk.com/hc/ja/articles/224969968-動画の埋め込みについて" style="margin-left: 1rem;">
+  <a href="https://vimeo.zendesk.com/hc/ja/articles/224969968-動画の埋め込みについて">https://vimeo.zendesk.com/hc/ja/articles/224969968-動画の埋め込みについて</a>
+  <br />
+  動画の埋め込みコードを取得するには、
+  <br />
+  その動画ページに移動し「共有」ボタンをクリックしてください。
+  <br />
+  埋め込みコード欄の上に表示される「+オプション表示」のリンクをクリックし、
+  <br />
+  基本のカスタムオプションで埋め込み動画のプレビューを表示します。
+  <br />
+  調整が終わったら、埋め込みコードをコピーし 動画 を埋め込みたい場所に貼り付けます。
+</blockquote>
+
+<p>順に説明していきます。</p>
+
+<ol>
+  <li>
+    <p>その動画ページに移動し「共有」ボタンをクリックしてください。
+  今回は、知多市で行われている伊勢湾カップの動画を掲載してみましょう。
+  <a href="https://vimeo.com/354152854">https://vimeo.com/354152854</a>
+  に移動して、「共有」ボタンをクリックします。
+  <img src="images/video/vimeo1.jpg" alt="伊勢湾" /></p>
+  </li>
+  <li>
+    <p>埋め込みコード欄の上に表示される「+オプション表示」のリンクをクリックし、
+  <img src="images/video/vimeo2.jpg" alt="伊勢湾" /></p>
+  </li>
+  <li>
+    <p>基本のカスタムオプションで埋め込み動画のプレビューを表示します。
+  <img src="images/video/vimeo3.jpg" alt="伊勢湾" /></p>
+  </li>
+  <li>
+    <p>いろいろな調整を行います。</p>
+  </li>
+</ol>
+
+<ul>
+  <li>サイズを、Responsive にします。</li>
+  <li>イントロの、プロフィール画像、タイトル、投稿者のチェックを外します。</li>
+  <li>スペシャルアイテムで、動画の下に説明を表示のチェックを外します。</li>
+</ul>
+
+<p><img src="images/video/vimeo4.jpg" alt="伊勢湾" /></p>
+
+<ol>
+  <li>調整が終わったら、埋め込みコードをコピーし、埋め込み欄をクリックします。
+<br />
+<code>Command + C</code> で、コードをコピーして、
+<code>Command + V</code> で、コードを貼り付けます。
+  <img src="images/video/vimeo5.jpg" alt="伊勢湾" /></li>
+</ol>
+
+<p>これで、完成です。
+YouTubeではレスポンシブ対応するために、
+<br />
+<code>&lt;div class="video"&gt;&lt;div class="inner"&gt;</code>や、
+<br />
+<code>style.css</code>が必要でしたが、今回は不要です。
+<br />
+<code>&lt;script src="https://player.vimeo.com/api/player.js"&gt;&lt;/script&gt;</code>
+<br />
+は、JavaScriptを使っていろいろ制御したいときには必要ですが、
+<br />
+今回は簡素に動画を掲載するだけですので、削除してよいでしょう。</p>
+
+</article>
+<div class="submenu">
+  <aside>
+    <h2>
+      APPENDIX
+    </h2>
+    <ul>
+      <li>
+        <a href="google_map.html">
+          <figure>
+            <img src="images/google_map.jpg" alt="" />
+          </figure>
+        </a>
+      </li>
+      <li>
+        <a href="youtube.html">
+          <figure>
+            <img src="images/youtube.jpg" alt="" />
+          </figure>
+        </a>
+      </li>
+      <li class="hidden">
+        <a href="vimeo.html">
+          <figure>
+            <img src="images/vimeo.jpg" alt="" />
+          </figure>
+        </a>
+      </li>
+      <li>
+        <a href="magnific_popup.html">
+          <figure>
+            <img src="images/magnific_popup.jpg" alt="" />
+          </figure>
+        </a>
+      </li>
+      <li>
+        <a href="swiper.html">
+          <figure>
+            <img src="images/swiper.jpg" alt="" />
+          </figure>
+        </a>
+      </li>
+    </ul>
+  </aside>
+</div><footer>
+      <p>
+        Copyright 令和元年 ©️ WAVE 
+      </p>
+    </footer>
+  </body>
+</html>

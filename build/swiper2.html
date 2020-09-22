@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Swiper - WAVE</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" />
+    <link href="stylesheets/style.css" rel="stylesheet" /><link href="images/favicon.png" rel="icon" type="image/png" />
+  </head>
+  <body class="site">
+    <header>
+      <a href="index.html">WAVE</a>
+    </header><nav>
+      <ul>
+        <li>
+          <a href="/">トップ</a>
+        </li>
+        <li>
+          <a href="/about.html">サイトについて</a>
+        </li>
+        <li>
+          <a href="/contact.html">お問い合わせ</a>
+        </li>
+      </ul>
+    </nav><style type="text/css">
+  html,
+  body {
+    height: auto;
+  }
+  
+  .swiper-container {
+    width: 100%;
+    max-width: 800px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .swiper-slide {
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .gallery-top {
+    height: 80%;
+    width: 100%;
+  }
+  
+  .gallery-thumbs {
+    height: 20%;
+    box-sizing: border-box;
+    padding: 10px 0;
+  }
+  
+  .gallery-thumbs .swiper-slide {
+    height: 100%;
+    opacity: 0.4;
+  }
+  
+  .gallery-thumbs .swiper-slide-thumb-active {
+    opacity: 1;
+  }
+</style>
+<article>
+  <h1>
+    写真を見せる(swiper)
+  </h1>
+  <figure>
+    <img src="images/swiper.jpg" alt="Swiper" />
+  </figure>
+  <p>
+    カルーセル（回転木馬）と呼ばれる形式での写真表示です。<br />サムネイル（小さな画像）を一緒に表示させることもできます。<br />公式サイトはこちらです。<br /><a href="https://swiperjs.com/demos/">使用例</a><br /><a href="https://swiperjs.com/get-started/">使い方</a><div class="swiper-slidae" style="background-image:url(images/photo/tora.jpg); height: 100px; width: 100px;"></div>
+  </p>
+  <h2>Swiperの使用例(サムネイル付き)</h2><link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"><div class="swiper-container gallery-top"><div class="swiper-wrapper"><div class="swiper-slide" style="background-image:url(images/photo/tora.jpg)"></div><div class="swiper-slide" style="background-image:url(images/photo/tsuru.jpg)"></div><div class="swiper-slide" style="background-image:url(images/photo/zou.jpg)"></div><div class="swiper-slide" style="background-image:url(images/photo/saru.jpg)"></div><div class="swiper-slide" style="background-image:url(images/photo/hakucho.jpg)"></div><div class="swiper-slide" style="background-image:url(images/photo/araiguma.jpg)"></div><div class="swiper-slide" style="background-image:url(images/photo/kuma.jpg)"></div></div><!-- Add Arrows --><div class="swiper-button-next swiper-button-white"></div><div class="swiper-button-prev swiper-button-white"></div></div><div class="swiper-container gallery-thumbs"><div class="swiper-wrapper"><div class="swiper-slide" style="background-image:url(images/photo/tora.jpg)"></div><div class="swiper-slide" style="background-image:url(images/photo/tsuru.jpg)"></div><div class="swiper-slide" style="background-image:url(images/photo/zou.jpg)"></div><div class="swiper-slide" style="background-image:url(images/photo/saru.jpg)"></div><div class="swiper-slide" style="background-image:url(images/photo/hakucho.jpg)"></div><div class="swiper-slide" style="background-image:url(images/photo/araiguma.jpg)"></div><div class="swiper-slide" style="background-image:url(images/photo/kuma.jpg)"></div></div></div><div class="highlight"><pre class="highlight html"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+  <span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;title&gt;</span>Swiper Demo<span class="nt">&lt;/title&gt;</span>
+  <span class="c">&lt;!-- Link Swiper's CSS --&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://unpkg.com/swiper/swiper-bundle.min.css"</span><span class="nt">&gt;</span>
+  <span class="c">&lt;!-- Carouselのサイズを設定 --&gt;</span>
+  <span class="nt">&lt;style&gt;</span>
+    <span class="nc">.swiper-container</span> <span class="p">{</span>
+      <span class="nl">width</span><span class="p">:</span> <span class="m">800px</span><span class="p">;</span>
+      <span class="nl">height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nc">.swiper-slide</span> <span class="p">{</span>
+      <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+      <span class="nl">justify-content</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+      <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nt">img</span> <span class="p">{</span>
+      <span class="nl">width</span><span class="p">:</span> <span class="m">600px</span><span class="p">;</span>
+      <span class="nl">height</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="nt">&lt;/style&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  
+  <span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;h1&gt;</span>Swiperの使用例<span class="nt">&lt;/h1&gt;</span>
+  <span class="c">&lt;!-- Slider main container --&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"swiper-container"</span><span class="nt">&gt;</span>
+    <span class="c">&lt;!-- Additional required wrapper --&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"swiper-wrapper"</span><span class="nt">&gt;</span>
+      <span class="c">&lt;!-- Slides --&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"swiper-slide"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"images/tora.jpg"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"swiper-slide"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"images/tsuru.jpg"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"swiper-slide"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"images/zou.jpg"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="c">&lt;!-- If we need pagination --&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"swiper-pagination fade-pagination"</span><span class="nt">&gt;&lt;/div&gt;</span>
+  
+    <span class="c">&lt;!-- If we need navigation buttons &amp; add arrows--&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"swiper-button-prev fade-button-prev"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"swiper-button-next fade-button-next"</span><span class="nt">&gt;&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  
+  <span class="c">&lt;!-- Swiper JS --&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://unpkg.com/swiper/swiper-bundle.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;script&gt;</span>
+    <span class="kd">let</span> <span class="nx">fade</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Swiper</span><span class="p">(</span><span class="dl">'</span><span class="s1">.swiper-container</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+      <span class="na">loop</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>     <span class="c1">// 環状化あり</span>
+      <span class="na">effect</span><span class="p">:</span> <span class="dl">'</span><span class="s1">fade</span><span class="dl">'</span><span class="p">,</span> <span class="c1">// スライド切替効果</span>
+      <span class="na">autoplay</span><span class="p">:</span> <span class="p">{</span>     <span class="c1">// 自動再生</span>
+        <span class="na">delay</span><span class="p">:</span> <span class="mi">3000</span><span class="p">,</span>  <span class="c1">// 3000msで次のスライドに</span>
+                      <span class="c1">// 利用者の操作により自動再生を停止可</span>
+        <span class="na">disableOnInteraction</span><span class="p">:</span> <span class="kc">true</span>
+      <span class="p">},</span>
+      <span class="na">pagination</span><span class="p">:</span> <span class="p">{</span>   <span class="c1">// 頁付</span>
+        <span class="na">el</span><span class="p">:</span> <span class="dl">'</span><span class="s1">.fade-pagination</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">clickable</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="p">},</span>
+      <span class="na">navigation</span><span class="p">:</span> <span class="p">{</span>   <span class="c1">// 左右の＜＞</span>
+        <span class="na">prevEl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">.fade-button-prev</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">nextEl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">.fade-button-next</span><span class="dl">'</span><span class="p">,</span>
+      <span class="p">},</span>
+    <span class="p">});</span>
+  <span class="nt">&lt;/script&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+  <span class="nt">&lt;/html&gt;</span></code></pre></div><p><a href="/swiper.html">カルーセルの例</a></p>
+  
+</article>
+<div class="submenu">
+  <aside>
+    <h2>
+      APPENDIX
+    </h2>
+    <ul>
+      <li>
+        <a href="google_map.html">
+          <figure>
+            <img src="images/google_map.jpg" alt="" />
+          </figure>
+        </a>
+      </li>
+      <li>
+        <a href="youtube.html">
+          <figure>
+            <img src="images/youtube.jpg" alt="" />
+          </figure>
+        </a>
+      </li>
+      <li>
+        <a href="vimeo.html">
+          <figure>
+            <img src="images/vimeo.jpg" alt="" />
+          </figure>
+        </a>
+      </li>
+      <li>
+        <a href="magnific_popup.html">
+          <figure>
+            <img src="images/magnific_popup.jpg" alt="" />
+          </figure>
+        </a>
+      </li>
+      <li class="hidden">
+        <a href="swiper.html">
+          <figure>
+            <img src="images/swiper.jpg" alt="" />
+          </figure>
+        </a>
+      </li>
+    </ul>
+  </aside>
+</div>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+  let galleryThumbs = new Swiper('.gallery-thumbs', {
+    spaceBetween: 10,
+    slidesPerView: 4,
+    loop: true,
+    freeMode: true,
+    loopedSlides: 5, //looped slides should be the same
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+  });
+  
+  let galleryTop = new Swiper('.gallery-top', {
+    spaceBetween: 10,
+    loop: true,
+    loopedSlides: 5, //looped slides should be the same
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    thumbs: {
+      swiper: galleryThumbs,
+    },
+  });
+</script><footer>
+      <p>
+        Copyright 令和元年 ©️ WAVE 
+      </p>
+    </footer>
+  </body>
+</html>
